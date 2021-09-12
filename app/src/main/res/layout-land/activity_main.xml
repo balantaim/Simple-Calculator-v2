@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_black"
+    android:background="?attr/backgroundColor"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -12,31 +12,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:layout_constraintVertical_weight="3">
 
         <TextView
             android:id="@+id/txtPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="16dp"
             android:layout_marginHorizontal="38dp"
+            android:layout_marginVertical="16dp"
             android:text="0"
             android:textAlignment="textEnd"
-            android:textColor="@color/white"
             android:textSize="38sp" />
 
         <TextView
             android:id="@+id/txtLegacy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="16dp"
             android:layout_marginHorizontal="38dp"
+            android:layout_marginVertical="16dp"
             android:textAlignment="textEnd"
-            android:textColor="@color/white"
             android:textSize="20sp" />
 
     </LinearLayout>

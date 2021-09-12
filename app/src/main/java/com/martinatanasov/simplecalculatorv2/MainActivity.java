@@ -2,6 +2,7 @@ package com.martinatanasov.simplecalculatorv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         backspace = findViewById(R.id.backspace);
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void addNumbersToString(View view) {
         if (newStr) {
             txtPanel.setText("");
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
         txtPanel.setText(number1);
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void operatorsEvent(View view) {
         if(parseNumber(number1)==true && parseNumber(number2)==true){
             if(operator=="%" || operator=="(exponent)"){return;
