@@ -27,7 +27,8 @@
             android:layout_margin="20dp"
             android:text="0"
             android:textAlignment="textEnd"
-            android:textSize="42sp" />
+            android:textSize="42sp"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/txtLegacy"
@@ -67,7 +68,8 @@
                 android:text="DEL"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="8dp" />
+                tools:layout_editor_absoluteX="8dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/backspace"
@@ -81,7 +83,8 @@
                 android:text="back"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/pi"
@@ -96,7 +99,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/percent"
@@ -110,7 +114,8 @@
                 android:text="%"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
         </TableRow>
 
         <TableRow
@@ -126,7 +131,8 @@
                 android:background="@drawable/third_button"
                 android:onClick="operatorsEvent"
                 android:src="@drawable/ic_xy"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:contentDescription="@string/xy"
+                tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
             <ImageButton
                 android:id="@+id/x2"
@@ -137,7 +143,8 @@
                 android:background="@drawable/third_button"
                 android:onClick="xPowered"
                 android:src="@drawable/ic_x2"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:contentDescription="@string/x2"
+                tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqrt"
@@ -152,7 +159,8 @@
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="italic"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus"
@@ -166,7 +174,8 @@
                 android:text="+"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
         </TableRow>
 
         <TableRow
@@ -185,7 +194,8 @@
                 android:text="7"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="8dp" />
+                tools:layout_editor_absoluteX="8dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/eight"
@@ -199,7 +209,8 @@
                 android:text="8"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nine"
@@ -213,7 +224,8 @@
                 android:text="9"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/minus"
@@ -227,7 +239,8 @@
                 android:text="-"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
         </TableRow>
 
         <TableRow
@@ -246,7 +259,8 @@
                 android:text="4"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="8dp" />
+                tools:layout_editor_absoluteX="8dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/five"
@@ -260,7 +274,8 @@
                 android:text="5"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/six"
@@ -274,7 +289,8 @@
                 android:text="6"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/multiplication"
@@ -289,7 +305,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
         </TableRow>
 
         <TableRow
@@ -308,7 +325,8 @@
                 android:text="1"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="8dp" />
+                tools:layout_editor_absoluteX="8dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/two"
@@ -322,7 +340,8 @@
                 android:text="2"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/three"
@@ -336,7 +355,8 @@
                 android:text="3"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/division"
@@ -350,7 +370,8 @@
                 android:text="÷"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
         </TableRow>
 
         <TableRow
@@ -369,7 +390,8 @@
                 android:text="."
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="8dp" />
+                tools:layout_editor_absoluteX="8dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/zero"
@@ -383,7 +405,7 @@
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="DuplicateSpeakableTextCheck"
+                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -398,7 +420,8 @@
                 android:text="+/-"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/equal"
@@ -412,7 +435,8 @@
                 android:text="="
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="104dp" />
+                tools:layout_editor_absoluteX="104dp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"/>
         </TableRow>
 
     </TableLayout>

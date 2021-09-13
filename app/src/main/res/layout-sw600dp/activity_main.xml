@@ -127,7 +127,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:onClick="operatorsEvent"
-                android:src="@drawable/ic_xy_tablet" />
+                android:src="@drawable/ic_xy_tablet"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/x2"
@@ -137,7 +138,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:onClick="xPowered"
-                android:src="@drawable/ic_x2_tablet" />
+                android:src="@drawable/ic_x2_tablet"
+                tools:ignore="SpeakableTextPresentCheck" />
 
 
             <androidx.appcompat.widget.AppCompatButton

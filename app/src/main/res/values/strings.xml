@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Simple Calculator</string>
+    <string name="xy">X exponent Y</string>
+    <string name="x2">X exponent 2</string>
 </resources>
