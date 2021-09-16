@@ -242,8 +242,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void clearWord (View view) {
         if (number1!="" && 0<number1.length()){
-            number1 = number1.substring(0, number1.length()-1);
-            txtPanel.setText(number1+"");
+            number1 = number1.substring(0, number1.length() - 1);
+            txtPanel.setText(number1 + "");
         }
     }
 

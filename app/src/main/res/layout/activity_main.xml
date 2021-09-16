@@ -131,6 +131,8 @@
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
+                android:padding="24dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
                 tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
@@ -143,6 +145,8 @@
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/x2"
                 android:onClick="xPowered"
+                android:padding="24dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2"
                 tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 

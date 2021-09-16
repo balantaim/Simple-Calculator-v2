@@ -11,34 +11,34 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="56dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012"
+        app:layout_constraintVertical_bias="0.0"
         app:layout_constraintVertical_weight="3">
 
         <TextView
             android:id="@+id/txtPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="30dp"
             android:text="0"
             android:textAlignment="textEnd"
-            android:textSize="124sp"
+            android:textSize="94sp"
             tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/txtLegacy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="34dp"
+            android:layout_margin="24dp"
             android:textAlignment="textEnd"
-            android:textSize="86sp" />
+            android:textSize="58sp" />
 
     </LinearLayout>
 
@@ -56,68 +56,148 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="4dp">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/del"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="cleanAll"
                 android:text="DEL"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/backspace"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="clearWord"
                 android:text="back"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/pi"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:id="@+id/comma"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="addNumbersToString"
-                android:text="π"
-                android:textAllCaps="false"
+                android:text="."
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/percent"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:id="@+id/equal"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/secondary_button_equal"
+                android:fontFamily="@font/stencil"
+                android:onClick="equalEvent"
+                android:text="="
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sqrt"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/third_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="sqrt"
+                android:text="√"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                android:textStyle="italic"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/seven"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/simple_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="addNumbersToString"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/eight"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/simple_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="addNumbersToString"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nine"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/simple_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="addNumbersToString"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/plus"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="operatorsEvent"
-                android:text="%"
+                android:text="+"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
         <TableRow
@@ -126,184 +206,148 @@
 
             <ImageButton
                 android:id="@+id/xy"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
-                android:padding="150dp"
+                android:padding="120dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
-                tools:ignore="HardcodedText,UsingOnClickInXml"/>
-
-            <ImageButton
-                android:id="@+id/x2"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/third_button"
-                android:contentDescription="@string/x2"
-                android:onClick="xPowered"
-                android:padding="150dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_x2"
                 tools:ignore="HardcodedText,UsingOnClickInXml" />
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sqrt"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/third_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="sqrt"
-                android:text="√"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                android:textStyle="italic"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/plus"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/secondary_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="operatorsEvent"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/seven"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/simple_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="addNumbersToString"
-                android:text="7"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="8dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/eight"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/simple_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="addNumbersToString"
-                android:text="8"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nine"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/simple_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="addNumbersToString"
-                android:text="9"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/minus"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/secondary_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="operatorsEvent"
-                android:text="-"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/four"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="addNumbersToString"
                 android:text="4"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="8dp"/>
+                tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/five"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="addNumbersToString"
                 android:text="5"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/six"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="addNumbersToString"
                 android:text="6"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="104dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/minus"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/secondary_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="operatorsEvent"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/x2"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/third_button"
+                android:contentDescription="@string/x2"
+                android:onClick="xPowered"
+                android:padding="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_x2"
+                tools:ignore="UsingOnClickInXml" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/one"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/simple_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="addNumbersToString"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/two"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/simple_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="addNumbersToString"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/three"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/simple_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="addNumbersToString"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/multiplication"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
                 android:fontFamily="@font/stencil"
@@ -311,9 +355,9 @@
                 android:text="x"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
         <TableRow
@@ -321,129 +365,81 @@
             android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/one"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/simple_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="addNumbersToString"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="8dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/two"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/simple_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="addNumbersToString"
-                android:text="2"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/three"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/simple_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="addNumbersToString"
-                android:text="3"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/division"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/secondary_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="operatorsEvent"
-                android:text="÷"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/comma"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:id="@+id/pi"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="addNumbersToString"
-                android:text="."
+                android:text="π"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="8dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/zero"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/simple_button"
-                android:fontFamily="@font/stencil"
-                android:onClick="addNumbersToString"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="70sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml,DuplicateSpeakableTextCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus_minus"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:fontFamily="@font/stencil"
                 android:onClick="addNumbersToString"
                 android:text="+/-"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/equal"
-                android:layout_width="30pt"
-                android:layout_height="48pt"
-                android:layout_margin="2dp"
+                android:id="@+id/zero"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/secondary_button_equal"
+                android:background="@drawable/simple_button"
                 android:fontFamily="@font/stencil"
-                android:onClick="equalEvent"
-                android:text="="
+                android:onClick="addNumbersToString"
+                android:text="0"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="66sp"
+                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/percent"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/secondary_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="operatorsEvent"
+                android:text="%"
+                android:textColor="@color/white"
+                android:textSize="66sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="104dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/division"
+                android:layout_width="20pt"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/secondary_button"
+                android:fontFamily="@font/stencil"
+                android:onClick="operatorsEvent"
+                android:text="÷"
+                android:textColor="@color/white"
+                android:textSize="66sp"
+                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:layout_editor_absoluteX="104dp" />
+
         </TableRow>
 
     </TableLayout>

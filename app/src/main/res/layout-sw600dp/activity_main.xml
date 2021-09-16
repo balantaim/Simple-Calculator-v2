@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="34dp"
             android:textAlignment="textEnd"
-            android:textSize="86sp" />
+            android:textSize="66sp" />
 
     </LinearLayout>
 
