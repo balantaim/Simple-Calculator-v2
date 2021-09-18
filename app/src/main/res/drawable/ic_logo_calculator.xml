@@ -11,10 +11,10 @@
       android:fillColor="@color/white"/>
   <path
       android:pathData="M24.35,20.91l3.54,0c0.31,0 0.57,0.27 0.57,0.59 0,0.33 -0.26,0.6 -0.57,0.6l-3.54,0 -0.01,0c-0.31,0 -0.56,-0.27 -0.56,-0.6 0,-0.32 0.25,-0.59 0.56,-0.59l0.01,0z"
-      android:fillColor="@color/colorOnSecondary"/>
+      android:fillColor="@color/teal_200"/>
   <path
       android:pathData="M24.35,23.03l3.54,0c0.31,0 0.57,0.27 0.57,0.6 0,0.33 -0.26,0.6 -0.57,0.6l-3.54,0 -0.01,0c-0.31,0 -0.56,-0.27 -0.56,-0.6 0,-0.33 0.25,-0.6 0.56,-0.6l0.01,0z"
-      android:fillColor="@color/colorOnSecondary"/>
+      android:fillColor="@color/teal_200"/>
   <path
       android:pathData="M8.29,4.15a4.25,4.15 0,1 0,8.5 0a4.25,4.15 0,1 0,-8.5 0z"
       android:fillColor="#003333"/>

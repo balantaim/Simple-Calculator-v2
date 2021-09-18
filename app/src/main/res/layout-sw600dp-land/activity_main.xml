@@ -11,8 +11,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginEnd="34dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +25,7 @@
             android:id="@+id/txtPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_margin="24dp"
             android:text="0"
             android:textAlignment="textEnd"
             android:textSize="94sp"
@@ -36,7 +35,7 @@
             android:id="@+id/txtLegacy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
+            android:layout_margin="20dp"
             android:textAlignment="textEnd"
             android:textSize="58sp" />
 
@@ -46,7 +45,7 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorOnSecondary"
+        android:background="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -56,7 +55,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="1dp">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/del"
@@ -213,7 +212,7 @@
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
-                android:padding="120dp"
+                android:padding="70dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
                 tools:ignore="HardcodedText,UsingOnClickInXml" />
@@ -293,7 +292,7 @@
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/x2"
                 android:onClick="xPowered"
-                android:padding="120dp"
+                android:padding="70dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2"
                 tools:ignore="UsingOnClickInXml" />
