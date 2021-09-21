@@ -76,43 +76,43 @@ public class MainActivity extends AppCompatActivity {
         numberCount();
         switch (view.getId()) {
             case R.id.zero:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "0";
                 break;
             case R.id.one:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "1";
                 break;
             case R.id.two:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "2";
                 break;
             case R.id.three:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "3";
                 break;
             case R.id.four:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "4";
                 break;
             case R.id.five:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "5";
                 break;
             case R.id.six:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "6";
                 break;
             case R.id.seven:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "7";
                 break;
             case R.id.eight:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "8";
                 break;
             case R.id.nine:
-                if (maxNum==true){return;}
+                if (maxNum){return;}
                 number1 += "9";
                 break;
             case R.id.pi:
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
     public void sqrt(View view){
         if (number1!="" && parseNumber(number1)==true) {
             if (Double.parseDouble(number1)<0){
-                txtLegacy.setText("Invalid number");
+                txtLegacy.setText(R.string.invalid_number); //"Invalid number"
                 newStr = true;
                 number1 = "";
                 number2 = "";
