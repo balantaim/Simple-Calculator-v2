@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginVertical="12dp"
+            android:layout_marginVertical="8dp"
             android:text="0"
             android:textAlignment="textEnd"
             android:textSize="40sp"
@@ -35,9 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginVertical="8dp"
+            android:layout_marginVertical="2dp"
             android:textAlignment="textEnd"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
 
     </LinearLayout>
 
@@ -68,7 +68,7 @@
                 android:onClick="cleanAll"
                 android:text="DEL"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp" />
 
@@ -83,7 +83,7 @@
                 android:onClick="clearWord"
                 android:text="back"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -98,7 +98,7 @@
                 android:onClick="addNumbersToString"
                 android:text="."
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp" />
 
@@ -113,7 +113,7 @@
                 android:onClick="equalEvent"
                 android:text="="
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
@@ -133,7 +133,7 @@
                 android:onClick="sqrt"
                 android:text="√"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 android:textStyle="italic"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
@@ -149,7 +149,7 @@
                 android:onClick="addNumbersToString"
                 android:text="7"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp" />
 
@@ -164,7 +164,7 @@
                 android:onClick="addNumbersToString"
                 android:text="8"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -179,7 +179,7 @@
                 android:onClick="addNumbersToString"
                 android:text="9"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -194,7 +194,7 @@
                 android:onClick="operatorsEvent"
                 android:text="+"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
@@ -212,7 +212,7 @@
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
-                android:padding="46dp"
+                android:padding="36dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
                 tools:ignore="HardcodedText,UsingOnClickInXml" />
@@ -228,7 +228,7 @@
                 android:onClick="addNumbersToString"
                 android:text="4"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp" />
 
@@ -243,7 +243,7 @@
                 android:onClick="addNumbersToString"
                 android:text="5"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -258,7 +258,7 @@
                 android:onClick="addNumbersToString"
                 android:text="6"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -273,7 +273,7 @@
                 android:onClick="operatorsEvent"
                 android:text="-"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -292,7 +292,7 @@
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/x2"
                 android:onClick="xPowered"
-                android:padding="46dp"
+                android:padding="36dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2"
                 tools:ignore="UsingOnClickInXml" />
@@ -308,7 +308,7 @@
                 android:onClick="addNumbersToString"
                 android:text="1"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp" />
 
@@ -323,7 +323,7 @@
                 android:onClick="addNumbersToString"
                 android:text="2"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -338,7 +338,7 @@
                 android:onClick="addNumbersToString"
                 android:text="3"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -354,7 +354,7 @@
                 android:text="x"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
@@ -375,7 +375,7 @@
                 android:text="π"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -390,7 +390,7 @@
                 android:onClick="addNumbersToString"
                 android:text="+/-"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -405,7 +405,7 @@
                 android:onClick="addNumbersToString"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -420,7 +420,7 @@
                 android:onClick="operatorsEvent"
                 android:text="%"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
@@ -435,7 +435,7 @@
                 android:onClick="operatorsEvent"
                 android:text="÷"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 

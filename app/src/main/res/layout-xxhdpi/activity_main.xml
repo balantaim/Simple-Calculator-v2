@@ -24,10 +24,12 @@
             android:id="@+id/txtPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="20dp"
             android:text="0"
             android:textAlignment="textEnd"
-            android:textSize="42sp"
+            android:textSize="50sp"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -35,11 +37,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="4dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="6dp"
             android:textAlignment="textEnd"
-            android:textSize="24sp" />
+            android:textSize="34sp" />
 
     </LinearLayout>
 
@@ -62,7 +64,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/del"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -70,14 +72,14 @@
                 android:onClick="cleanAll"
                 android:text="DEL"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/backspace"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -85,14 +87,14 @@
                 android:onClick="clearWord"
                 android:text="back"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/pi"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -101,14 +103,14 @@
                 android:text="π"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/percent"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -116,7 +118,7 @@
                 android:onClick="operatorsEvent"
                 android:text="%"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
         </TableRow>
@@ -128,13 +130,13 @@
             <ImageButton
                 android:id="@+id/xy"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
-                android:padding="24dp"
+                android:padding="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
                 tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
@@ -142,13 +144,13 @@
             <ImageButton
                 android:id="@+id/x2"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/x2"
                 android:onClick="xPowered"
-                android:padding="24dp"
+                android:padding="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2"
                 tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
@@ -156,7 +158,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqrt"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -164,7 +166,7 @@
                 android:onClick="sqrt"
                 android:text="√"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 android:textStyle="italic"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
@@ -172,7 +174,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -180,7 +182,7 @@
                 android:onClick="operatorsEvent"
                 android:text="+"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
         </TableRow>
@@ -192,7 +194,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/seven"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -200,14 +202,14 @@
                 android:onClick="addNumbersToString"
                 android:text="7"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/eight"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -215,14 +217,14 @@
                 android:onClick="addNumbersToString"
                 android:text="8"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nine"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -230,14 +232,14 @@
                 android:onClick="addNumbersToString"
                 android:text="9"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/minus"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -245,7 +247,7 @@
                 android:onClick="operatorsEvent"
                 android:text="-"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
         </TableRow>
@@ -257,7 +259,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/four"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -265,14 +267,14 @@
                 android:onClick="addNumbersToString"
                 android:text="4"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/five"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -280,14 +282,14 @@
                 android:onClick="addNumbersToString"
                 android:text="5"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/six"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -295,14 +297,14 @@
                 android:onClick="addNumbersToString"
                 android:text="6"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/multiplication"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -311,7 +313,7 @@
                 android:text="x"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
         </TableRow>
@@ -323,7 +325,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/one"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -331,14 +333,14 @@
                 android:onClick="addNumbersToString"
                 android:text="1"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/two"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -346,14 +348,14 @@
                 android:onClick="addNumbersToString"
                 android:text="2"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/three"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -361,14 +363,14 @@
                 android:onClick="addNumbersToString"
                 android:text="3"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/division"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -376,7 +378,7 @@
                 android:onClick="operatorsEvent"
                 android:text="÷"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
         </TableRow>
@@ -388,7 +390,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/comma"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -396,14 +398,14 @@
                 android:onClick="addNumbersToString"
                 android:text="."
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="8dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/zero"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -411,14 +413,14 @@
                 android:onClick="addNumbersToString"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus_minus"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -426,14 +428,14 @@
                 android:onClick="addNumbersToString"
                 android:text="+/-"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/equal"
                 android:layout_width="30pt"
-                android:layout_height="30pt"
+                android:layout_height="38pt"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button_equal"
@@ -441,7 +443,7 @@
                 android:onClick="equalEvent"
                 android:text="="
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
                 tools:layout_editor_absoluteX="104dp"/>
         </TableRow>

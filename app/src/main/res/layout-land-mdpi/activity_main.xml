@@ -69,7 +69,7 @@
                 android:text="DEL"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -84,7 +84,7 @@
                 android:text="back"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -99,7 +99,7 @@
                 android:text="."
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -114,7 +114,7 @@
                 android:text="="
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
@@ -135,7 +135,7 @@
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="italic"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -150,7 +150,7 @@
                 android:text="7"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -165,7 +165,7 @@
                 android:text="8"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -180,7 +180,7 @@
                 android:text="9"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -195,7 +195,7 @@
                 android:text="+"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
@@ -215,7 +215,7 @@
                 android:padding="26dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
-                tools:ignore="HardcodedText,UsingOnClickInXml" />
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/four"
@@ -229,7 +229,7 @@
                 android:text="4"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -244,7 +244,7 @@
                 android:text="5"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -259,7 +259,7 @@
                 android:text="6"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -274,7 +274,7 @@
                 android:text="-"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
         </TableRow>
@@ -295,7 +295,7 @@
                 android:padding="26dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml,TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/one"
@@ -309,7 +309,7 @@
                 android:text="1"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -324,7 +324,7 @@
                 android:text="2"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -339,7 +339,7 @@
                 android:text="3"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -355,7 +355,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
@@ -376,7 +376,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -391,7 +391,7 @@
                 android:text="+/-"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -406,7 +406,7 @@
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml"
+                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -421,7 +421,7 @@
                 android:text="%"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -436,7 +436,7 @@
                 android:text="÷"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
         </TableRow>
