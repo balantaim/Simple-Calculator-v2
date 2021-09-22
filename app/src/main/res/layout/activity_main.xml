@@ -137,7 +137,7 @@
                 android:padding="24dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
-                tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml" />
 
             <ImageButton
                 android:id="@+id/x2"
@@ -151,7 +151,7 @@
                 android:padding="24dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2"
-                tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqrt"

@@ -218,7 +218,7 @@
                 android:padding="50dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
-                tools:ignore="HardcodedText,UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/four"

@@ -3,5 +3,4 @@
     <string name="xy">X exponent Y</string>
     <string name="x2">X exponent 2</string>
     <string name="invalid_number">Invalid number</string>
-    <string name="error_massage">Error: </string>
 </resources>

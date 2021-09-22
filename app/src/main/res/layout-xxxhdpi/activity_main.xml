@@ -138,7 +138,7 @@
                 android:padding="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
-                tools:ignore="HardcodedText,UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml"/>
 
             <ImageButton
                 android:id="@+id/x2"
@@ -152,7 +152,7 @@
                 android:padding="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2"
-                tools:ignore="HardcodedText,UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml" />
 
 
             <androidx.appcompat.widget.AppCompatButton
