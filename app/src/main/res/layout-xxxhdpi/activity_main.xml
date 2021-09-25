@@ -138,7 +138,7 @@
                 android:padding="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
-                tools:ignore="UsingOnClickInXml"/>
+                tools:ignore="UsingOnClickInXml" />
 
             <ImageButton
                 android:id="@+id/x2"

@@ -182,7 +182,7 @@
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
-                tools:layout_editor_absoluteX="104dp"/>
+                tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
         <TableRow

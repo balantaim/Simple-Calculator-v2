@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     public void operatorsEvent(View view) {
-        if(parseNumber(number1)==true && parseNumber(number2)==true){
+        if(parseNumber(number1) && parseNumber(number2)){
             if(operator=="%" || operator=="(exponent)"){return;
             } else {
                 equalEvent(view);
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void equalEvent(View view) {
-        if(number2!="" && parseNumber(number2)==true && parseNumber(number1)==true){
+        if(number2!="" && parseNumber(number2) && parseNumber(number1)){
             switch (operator) {
                 case "+":
                     result = Double.parseDouble(number2) + Double.parseDouble(number1);
@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void xPowered(View view){
-        if (number1!="" && parseNumber(number1)==true) {
+        if (number1!="" && parseNumber(number1)) {
             double sum = Double.parseDouble(number1) * Double.parseDouble(number1);
             txtLegacy.setText(sum + "");
             newStr = true;
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sqrt(View view){
-        if (number1!="" && parseNumber(number1)==true) {
+        if (number1!="" && parseNumber(number1)) {
             if (Double.parseDouble(number1)<0){
                 txtLegacy.setText(R.string.invalid_number); //"Invalid number"
                 newStr = true;
