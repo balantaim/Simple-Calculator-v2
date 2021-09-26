@@ -23,8 +23,9 @@
             android:id="@+id/txtPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginVertical="12dp"
+            android:layout_marginVertical="16dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="24dp"
             android:text="0"
             android:textAlignment="textEnd"
             android:textSize="40sp"
@@ -34,8 +35,9 @@
             android:id="@+id/txtLegacy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginVertical="8dp"
+            android:layout_marginVertical="2dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="24dp"
             android:textAlignment="textEnd"
             android:textSize="24sp" />
 
@@ -60,7 +62,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/del"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -69,13 +71,13 @@
                 android:text="DEL"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/backspace"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -84,13 +86,13 @@
                 android:text="back"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/comma"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -99,13 +101,13 @@
                 android:text="."
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/equal"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button_equal"
@@ -114,7 +116,7 @@
                 android:text="="
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
@@ -125,7 +127,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqrt"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -135,13 +137,13 @@
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="italic"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/seven"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -150,13 +152,13 @@
                 android:text="7"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/eight"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -165,13 +167,13 @@
                 android:text="8"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nine"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -180,13 +182,13 @@
                 android:text="9"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -195,7 +197,7 @@
                 android:text="+"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
@@ -206,21 +208,21 @@
             <ImageButton
                 android:id="@+id/xy"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
-                android:padding="50dp"
+                android:padding="40dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml,TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/four"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -229,13 +231,13 @@
                 android:text="4"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/five"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -244,13 +246,13 @@
                 android:text="5"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/six"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -259,13 +261,13 @@
                 android:text="6"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/minus"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -274,7 +276,7 @@
                 android:text="-"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
         </TableRow>
@@ -286,21 +288,21 @@
             <ImageButton
                 android:id="@+id/x2"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
                 android:contentDescription="@string/x2"
                 android:onClick="xPowered"
-                android:padding="50dp"
+                android:padding="40dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2"
-                tools:ignore="UsingOnClickInXml" />
+                tools:ignore="UsingOnClickInXml,TouchTargetSizeCheck" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/one"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -309,13 +311,13 @@
                 android:text="1"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/two"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -324,13 +326,13 @@
                 android:text="2"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/three"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -339,13 +341,13 @@
                 android:text="3"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/multiplication"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -355,7 +357,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
         </TableRow>
 
@@ -366,7 +368,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/pi"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -376,13 +378,13 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus_minus"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -391,13 +393,13 @@
                 android:text="+/-"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/zero"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -406,13 +408,13 @@
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml"
+                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/percent"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -421,13 +423,13 @@
                 android:text="%"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/division"
                 android:layout_width="20pt"
-                android:layout_height="48dp"
+                android:layout_height="42dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -436,11 +438,18 @@
                 android:text="÷"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                tools:ignore="HardcodedText,UsingOnClickInXml"
+                tools:ignore="HardcodedText,UsingOnClickInXml,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="104dp" />
 
         </TableRow>
 
     </TableLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

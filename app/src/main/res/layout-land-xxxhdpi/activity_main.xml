@@ -29,7 +29,7 @@
             android:layout_marginEnd="24dp"
             android:text="0"
             android:textAlignment="textEnd"
-            android:textSize="52sp"
+            android:textSize="48sp"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -445,5 +445,12 @@
         </TableRow>
 
     </TableLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

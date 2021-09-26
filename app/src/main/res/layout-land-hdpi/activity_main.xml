@@ -27,7 +27,7 @@
             android:layout_marginVertical="10dp"
             android:text="0"
             android:textAlignment="textEnd"
-            android:textSize="40sp"
+            android:textSize="36sp"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -60,7 +60,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/del"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -75,7 +75,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/backspace"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -90,7 +90,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/comma"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -105,7 +105,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/equal"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button_equal"
@@ -125,7 +125,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqrt"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -141,7 +141,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/seven"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -156,7 +156,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/eight"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -171,7 +171,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nine"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -186,7 +186,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -206,7 +206,7 @@
             <ImageButton
                 android:id="@+id/xy"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -220,7 +220,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/four"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -235,7 +235,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/five"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -250,7 +250,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/six"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -265,7 +265,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/minus"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -286,7 +286,7 @@
             <ImageButton
                 android:id="@+id/x2"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -300,7 +300,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/one"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -315,7 +315,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/two"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -330,7 +330,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/three"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -345,7 +345,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/multiplication"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -366,7 +366,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/pi"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -382,7 +382,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus_minus"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/third_button"
@@ -397,7 +397,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/zero"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
@@ -412,7 +412,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/percent"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -427,7 +427,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/division"
                 android:layout_width="20pt"
-                android:layout_height="38dp"
+                android:layout_height="36dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/secondary_button"
@@ -442,5 +442,12 @@
         </TableRow>
 
     </TableLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
