@@ -402,7 +402,7 @@
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/zero"
+                android:id="@+id/zeroBtn"
                 android:layout_width="30pt"
                 android:layout_height="62dp"
                 android:layout_margin="1dp"

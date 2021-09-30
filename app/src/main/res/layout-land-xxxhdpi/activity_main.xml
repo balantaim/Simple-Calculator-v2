@@ -398,7 +398,7 @@
                 tools:layout_editor_absoluteX="104dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/zero"
+                android:id="@+id/zeroBtn"
                 android:layout_width="20pt"
                 android:layout_height="48dp"
                 android:layout_margin="1dp"
