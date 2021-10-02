@@ -30,7 +30,7 @@
             android:layout_marginBottom="20dp"
             android:text="0"
             android:textAlignment="textEnd"
-            android:textSize="96sp"
+            android:textSize="90sp"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -137,10 +137,11 @@
                 android:background="@drawable/third_button_big"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
-                android:padding="38dp"
+                android:padding="50dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_xy"
+                android:src="@drawable/ic_xy_big"
                 tools:ignore="UsingOnClickInXml" />
+
 
             <ImageButton
                 android:id="@+id/x2"
@@ -151,11 +152,10 @@
                 android:background="@drawable/third_button_big"
                 android:contentDescription="@string/x2"
                 android:onClick="xPowered"
-                android:padding="38dp"
+                android:padding="50dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_x2"
+                android:src="@drawable/ic_x2_big"
                 tools:ignore="UsingOnClickInXml" />
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqrt"

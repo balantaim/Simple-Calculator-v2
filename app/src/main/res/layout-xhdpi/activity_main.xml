@@ -137,7 +137,7 @@
                 android:onClick="operatorsEvent"
                 android:padding="12dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_xy"
+                android:src="@drawable/ic_xy_big"
                 tools:ignore="UsingOnClickInXml" />
 
             <ImageButton
@@ -151,7 +151,7 @@
                 android:onClick="xPowered"
                 android:padding="12dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_x2"
+                android:src="@drawable/ic_x2_big"
                 tools:ignore="UsingOnClickInXml" />
 
             <androidx.appcompat.widget.AppCompatButton

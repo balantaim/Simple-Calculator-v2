@@ -30,7 +30,7 @@
             android:layout_marginBottom="50dp"
             android:text="0"
             android:textAlignment="textEnd"
-            android:textSize="100sp"
+            android:textSize="120sp"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:layout_marginEnd="26dp"
             android:layout_marginBottom="4dp"
             android:textAlignment="textEnd"
-            android:textSize="70sp" />
+            android:textSize="90sp" />
 
     </LinearLayout>
 
@@ -137,9 +137,9 @@
                 android:background="@drawable/third_button_big"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
-                android:padding="38dp"
+                android:padding="70dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_xy"
+                android:src="@drawable/ic_xy_big"
                 tools:ignore="UsingOnClickInXml" />
 
             <ImageButton
@@ -151,9 +151,9 @@
                 android:background="@drawable/third_button_big"
                 android:contentDescription="@string/x2"
                 android:onClick="xPowered"
-                android:padding="38dp"
+                android:padding="70dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_x2"
+                android:src="@drawable/ic_x2_big"
                 tools:ignore="UsingOnClickInXml" />
 
 
