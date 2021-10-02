@@ -1,5 +1,6 @@
 package com.martinatanasov.simplecalculatorv2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView txtPanel, txtLegacy;
-    Button zero, one, two, three, four, five, six, seven, eight, nine, equal,
+    Button zeroBtn, one, two, three, four, five, six, seven, eight, nine, equal,
             comma, pi, sqrt, minus, plus, division, multiplication,
             percent, plus_minus, del, backspace;
     ImageButton x2, xy;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private void idDeclaration() {
         txtPanel = findViewById(R.id.txtPanel);
         txtLegacy = findViewById(R.id.txtLegacy);
-        zero = findViewById(R.id.zero);
+        zeroBtn = findViewById(R.id.zeroBtn);
         one = findViewById(R.id.one);
         two = findViewById(R.id.two);
         three = findViewById(R.id.three);
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         number1 = txtPanel.getText().toString();
         numberCount();
         switch (view.getId()) {
-            case R.id.zero:
+            case R.id.zeroBtn:
                 if (maxNum){return;}
                 number1 += "0";
                 break;
@@ -205,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
                         float percentFunction = (float)(Float.parseFloat(number1)*(Double.parseDouble(number2)/100.0f));
                         result = percentFunction;
                     } catch (Exception e){
-                        txtLegacy.setText("Error: "+e);
+                        txtLegacy.setText(new StringBuilder().append("Error: ").append(e).toString());
                     }
                     break;
                 case "(exponent)":
@@ -286,5 +287,39 @@ public class MainActivity extends AppCompatActivity {
         } catch(NumberFormatException e){
             return false;
         }
+    }
+
+    //Save Instance when you rotate the device or use recreate
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+
+        outState.putString("key_txtPanel", txtPanel.getText().toString());
+        outState.putString("key_txtLegacy", txtLegacy.getText().toString());
+        outState.putString("key_number1", number1);
+        outState.putString("key_number2", number2);
+        outState.putString("key_operator", operator);
+        outState.putLong("key_result_long", resultLong);
+        outState.putDouble("key_result", result);
+        outState.putBoolean("key_new_str", newStr);
+        outState.putBoolean("key_max_num", maxNum);
+
+        super.onSaveInstanceState(outState);
+    }
+
+    //Restore the instance settings
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+
+        txtPanel.setText(savedInstanceState.getString("key_txtPanel", "0"));
+        txtLegacy.setText(savedInstanceState.getString("key_txtLegacy", ""));
+        number1 = savedInstanceState.getString("key_number1", "");
+        number2 = savedInstanceState.getString("key_number2", "");
+        operator = savedInstanceState.getString("key_operator", "+");
+        resultLong = savedInstanceState.getLong("key_result_long", 0);
+        result = savedInstanceState.getDouble("key_result", 0);
+        newStr = savedInstanceState.getBoolean("key_new_str", true);
+        maxNum = savedInstanceState.getBoolean("key_max_num", false);
+
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }
