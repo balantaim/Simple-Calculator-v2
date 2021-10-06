@@ -3,7 +3,6 @@ package com.martinatanasov.simplecalculatorv2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton x2, xy;
     String number1= "";
     String number2 = "";
-    String operator = "+";
+    String operator = "";
     long resultLong = 0;
     double result = 0;
     final double piNumber = 3.141592653589793;
@@ -67,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         backspace = findViewById(R.id.backspace);
     }
 
-    @SuppressLint("NonConstantResourceId")
     public void addNumbersToString(View view) {
         if (newStr) {
             txtPanel.setText("");
@@ -140,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
         txtPanel.setText(number1);
     }
 
-    @SuppressLint("NonConstantResourceId")
     public void operatorsEvent(View view) {
         if(parseNumber(number1) && parseNumber(number2)){
             if(operator=="%" || operator=="(exponent)"){return;
@@ -242,10 +239,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearWord (View view) {
-        if (number1!="" && 0<number1.length()){
-            number1 = number1.substring(0, number1.length() - 1);
-            txtPanel.setText(number1 + "");
+        if(number1.contains("Infinity")){
+            cleanAll(view);
         }
+        if(!number1.contains("E") || number1.contains("e")){
+            if (number1!="" && 0<number1.length()){
+                number1 = number1.substring(0, number1.length() - 1);
+                txtPanel.setText(number1 + "");
+            }
+        }
+
     }
 
     public void sqrt(View view){
@@ -314,7 +317,7 @@ public class MainActivity extends AppCompatActivity {
         txtLegacy.setText(savedInstanceState.getString("key_txtLegacy", ""));
         number1 = savedInstanceState.getString("key_number1", "");
         number2 = savedInstanceState.getString("key_number2", "");
-        operator = savedInstanceState.getString("key_operator", "+");
+        operator = savedInstanceState.getString("key_operator", "");
         resultLong = savedInstanceState.getLong("key_result_long", 0);
         result = savedInstanceState.getDouble("key_result", 0);
         newStr = savedInstanceState.getBoolean("key_new_str", true);
