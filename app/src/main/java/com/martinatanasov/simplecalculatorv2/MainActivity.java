@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 operator = "-";
                 break;
             case R.id.multiplication:
-                operator = "*";
+                operator = "x";
                 break;
             case R.id.division:
                 operator = "/";
@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 case "-":
                     result = Double.parseDouble(number2) - Double.parseDouble(number1);
                     break;
-                case "*":
+                case "x":
                     result = Double.parseDouble(number2) * Double.parseDouble(number1);
                     break;
                 case "/":
@@ -241,8 +241,7 @@ public class MainActivity extends AppCompatActivity {
     public void clearWord (View view) {
         if(number1.contains("Infinity")){
             cleanAll(view);
-        }
-        if(!number1.contains("E") || number1.contains("e")){
+        }else if(!number1.contains("E") || number1.contains("e")){
             if (number1!="" && 0<number1.length()){
                 number1 = number1.substring(0, number1.length() - 1);
                 txtPanel.setText(number1 + "");
