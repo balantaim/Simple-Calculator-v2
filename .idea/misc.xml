@@ -36,19 +36,19 @@
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw400dp-land-mdpi/activity_main.xml" value="0.3640625" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw400dp-mdpi/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw420dp-land-xxhdpi/activity_main.xml" value="0.6021897810218978" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw600dp-land/activity_main.xml" value="0.26145833333333335" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw600dp-land/activity_main.xml" value="0.24307692307692308" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.20954907161803712" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw720dp-land/activity_main.xml" value="0.196875" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw720dp/activity_main.xml" value="0.2290909090909091" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw840dp-land/activity_main.xml" value="0.21796875" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw840dp/activity_main.xml" value="0.275" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw840dp/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw960dp-land/activity_main.xml" value="0.2507462686567164" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw960dp/activity_main.xml" value="0.275" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-w2200dp-land-xxhdpi/activity_main.xml" value="0.3640625" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-w2636dp-land-xxhdpi/activity_main.xml" value="0.4276041666666667" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-w733dp-land-xxhdpi/activity_main.xml" value="0.64140625" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xhdpi/activity_main.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xxhdpi/activity_main.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xhdpi/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xxhdpi/activity_main.xml" value="0.3640625" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xxxhdpi/activity_main.xml" value="0.275" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout/activity_main.xml" value="0.3640625" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
@@ -61,12 +61,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.3640625" />
-      </ProjectState>
-    </option>
   </component>
 </project>

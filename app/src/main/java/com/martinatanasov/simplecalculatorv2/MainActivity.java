@@ -1,8 +1,11 @@
 package com.martinatanasov.simplecalculatorv2;
 
+import static java.lang.Double.parseDouble;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         backspace = findViewById(R.id.backspace);
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void addNumbersToString(View view) {
         if (newStr) {
             txtPanel.setText("");
@@ -138,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         txtPanel.setText(number1);
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void operatorsEvent(View view) {
         if(parseNumber(number1) && parseNumber(number2)){
             if(operator=="%" || operator=="(exponent)"){return;
@@ -187,50 +192,66 @@ public class MainActivity extends AppCompatActivity {
         if(number2!="" && parseNumber(number2) && parseNumber(number1)){
             switch (operator) {
                 case "+":
-                    result = Double.parseDouble(number2) + Double.parseDouble(number1);
+                    result = parseDouble(number2) + parseDouble(number1);
                     break;
                 case "-":
-                    result = Double.parseDouble(number2) - Double.parseDouble(number1);
+                    result = parseDouble(number2) - parseDouble(number1);
                     break;
                 case "x":
-                    result = Double.parseDouble(number2) * Double.parseDouble(number1);
+                    result = parseDouble(number2) * parseDouble(number1);
                     break;
                 case "/":
-                    result = Double.parseDouble(number2) / Double.parseDouble(number1);
+                    result = parseDouble(number2) / parseDouble(number1);
                     break;
                 case "%":
                     try{
-                        float percentFunction = (float)(Float.parseFloat(number1)*(Double.parseDouble(number2)/100.0f));
-                        result = percentFunction;
+                        result = (float)(Float.parseFloat(number1)*(parseDouble(number2)/100.0f));
                     } catch (Exception e){
                         txtLegacy.setText(new StringBuilder().append("Error: ").append(e).toString());
                     }
                     break;
                 case "(exponent)":
-                    result=Math.pow(Double.parseDouble(number2), Double.parseDouble(number1));
+                    result=Math.pow(parseDouble(number2), parseDouble(number1));
                     break;
                 default:
                     break;
             }
+
+            boolean negativeNum = false;
+            if(number1.contains("-")) {
+                negativeNum = true;
+            }
             if(result%1==0){
                 resultLong = (long) result;
-                txtPanel.setText(resultLong + "");
+                if(negativeNum && (operator.contains("-") || operator.contains("+"))){
+                    txtPanel.setText(number2 + " " + operator + " (" +number1+") =");
+                } else {
+                    txtPanel.setText(number2 + " " + operator + " " +number1+" =");
+                }
                 txtLegacy.setText(resultLong + "");
                 number1=resultLong+"";
             } else {
-                txtPanel.setText(result + "");
+                if(negativeNum && (operator.contains("-") || operator.contains("+"))){
+                    txtPanel.setText(number2 + " " + operator + " (" + number1+") =");
+                } else {
+                    txtPanel.setText(number2 + " " + operator + " " + number1+" =");
+                }
                 txtLegacy.setText(result + "");
                 number1=result+"";
+                }
             }
             newStr=true;
             number2="";
-            resultLong =0;
-        }
+            resultLong=0;
+            result=0;
     }
 
     public void xPowered(View view){
         if (number1!="" && parseNumber(number1)) {
-            double sum = Double.parseDouble(number1) * Double.parseDouble(number1);
+            double sum = parseDouble(number1) * parseDouble(number1);
+            if(!number1.contains(getString(R.string.infinity))){
+                txtPanel.setText(number1 + " exp(2)");
+            }
             txtLegacy.setText(sum + "");
             newStr = true;
             number1 = sum + "";
@@ -239,27 +260,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearWord (View view) {
-        if(number1.contains("Infinity")){
+        if(number1.contains(getString(R.string.infinity))){
             cleanAll(view);
-        }else if(!number1.contains("E") || number1.contains("e")){
+        }
+        if (newStr){
+            return;
+        }
+        else if(!number1.contains("E") || number1.contains("e")){
             if (number1!="" && 0<number1.length()){
                 number1 = number1.substring(0, number1.length() - 1);
                 txtPanel.setText(number1 + "");
             }
         }
-
     }
 
     public void sqrt(View view){
         if (number1!="" && parseNumber(number1)) {
-            if (Double.parseDouble(number1)<0){
+            if (parseDouble(number1)<0){
                 txtLegacy.setText(R.string.invalid_number); //"Invalid number"
                 newStr = true;
                 number1 = "";
                 number2 = "";
                 return;
             }
-            double sum = Math.sqrt(Double.parseDouble(number1));
+            double sum = Math.sqrt(parseDouble(number1));
             txtLegacy.setText(sum + "");
             newStr = true;
             number1 = sum + "";
@@ -284,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static boolean parseNumber(String s){
         try {
-            Double.parseDouble(s);
+            parseDouble(s);
             return true;
         } catch(NumberFormatException e){
             return false;
