@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 number1 += ".";
                 break;
             case R.id.plus_minus:
-                if (number1 != "" && number1 != "0") {
+                if (!number1.equals("") && !number1.equals("0")) {
                     if (number1.startsWith("-")) {
                         number1 = number1.substring(1);
                     } else {
@@ -145,13 +145,13 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     public void operatorsEvent(View view) {
         if(parseNumber(number1) && parseNumber(number2)){
-            if(operator=="%" || operator=="(exponent)"){return;
+            if(operator.equals("%") || operator.equals("(exponent)")){return;
             } else {
                 equalEvent(view);
                 txtLegacy.setText(number1+" "+operator);
             }
         }
-        if(number1==""){return;}
+        if(number1.equals("")){return;}
         number2 = number1;
         newStr = true;
         switch (view.getId()) {
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void equalEvent(View view) {
-        if(number2!="" && parseNumber(number2) && parseNumber(number1)){
+        if(!number2.equals("") && parseNumber(number2) && parseNumber(number1)){
             switch (operator) {
                 case "+":
                     result = parseDouble(number2) + parseDouble(number1);
@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void xPowered(View view){
-        if (number1!="" && parseNumber(number1)) {
+        if (!number1.equals("") && parseNumber(number1)) {
             double sum = parseDouble(number1) * parseDouble(number1);
             if(!number1.contains(getString(R.string.infinity))){
                 txtPanel.setText(number1 + " exp(2)");
@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         else if(!number1.contains("E") || number1.contains("e")){
-            if (number1!="" && 0<number1.length()){
+            if (!number1.equals("") && 0<number1.length()){
                 number1 = number1.substring(0, number1.length() - 1);
                 txtPanel.setText(number1 + "");
             }
@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sqrt(View view){
-        if (number1!="" && parseNumber(number1)) {
+        if (!number1.equals("") && parseNumber(number1)) {
             if (parseDouble(number1)<0){
                 txtLegacy.setText(R.string.invalid_number); //"Invalid number"
                 newStr = true;
@@ -318,7 +318,6 @@ public class MainActivity extends AppCompatActivity {
     //Save Instance when you rotate the device or use recreate
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
-
         outState.putString("key_txtPanel", txtPanel.getText().toString());
         outState.putString("key_txtLegacy", txtLegacy.getText().toString());
         outState.putString("key_number1", number1);
@@ -335,7 +334,6 @@ public class MainActivity extends AppCompatActivity {
     //Restore the instance settings
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-
         txtPanel.setText(savedInstanceState.getString("key_txtPanel", "0"));
         txtLegacy.setText(savedInstanceState.getString("key_txtLegacy", ""));
         number1 = savedInstanceState.getString("key_number1", "");
