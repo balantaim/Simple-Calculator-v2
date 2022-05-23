@@ -224,17 +224,17 @@ public class MainActivity extends AppCompatActivity {
             if(result%1==0){
                 resultLong = (long) result;
                 if(negativeNum && (operator.contains("-") || operator.contains("+"))){
-                    txtPanel.setText(number2 + " " + operator + " (" +number1+") =");
+                    txtPanel.setText(number2  + operator + "(" +number1+ ")=");
                 } else {
-                    txtPanel.setText(number2 + " " + operator + " " +number1+" =");
+                    txtPanel.setText(number2 + operator + number1+ "=");
                 }
                 txtLegacy.setText(resultLong + "");
                 number1=resultLong+"";
             } else {
                 if(negativeNum && (operator.contains("-") || operator.contains("+"))){
-                    txtPanel.setText(number2 + " " + operator + " (" + number1+") =");
+                    txtPanel.setText(number2 + operator + "(" + number1+ ")=");
                 } else {
-                    txtPanel.setText(number2 + " " + operator + " " + number1+" =");
+                    txtPanel.setText(number2 + operator + number1+"=");
                 }
                 txtLegacy.setText(result + "");
                 number1=result+"";
@@ -284,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             double sum = Math.sqrt(parseDouble(number1));
+            txtPanel.setText("√" + number1);
             txtLegacy.setText(sum + "");
             newStr = true;
             number1 = sum + "";
