@@ -27,30 +27,33 @@
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land-ldpi/activity_main.xml" value="1.25" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land-mdpi/activity_main.xml" value="1.03125" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land-xhdpi/activity_main.xml" value="0.40260416666666665" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land-xxhdpi/activity_main.xml" value="0.3640625" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land-xxhdpi-v26/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land-xxhdpi/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land-xxxhdpi/activity_main.xml" value="0.196875" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land/activity_main.xml" value="0.3640625" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-land/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-ldpi/activity_main.xml" value="1.9038461538461537" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-mdpi/activity_main.xml" value="1.4666666666666666" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw1024dp/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw400dp-land-mdpi/activity_main.xml" value="0.3640625" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw400dp-mdpi/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw400dp-land-mdpi/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw400dp-mdpi/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw420dp-land-xxhdpi/activity_main.xml" value="0.6021897810218978" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw600dp-land/activity_main.xml" value="0.24307692307692308" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.20954907161803712" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw720dp-land/activity_main.xml" value="0.196875" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw720dp/activity_main.xml" value="0.2290909090909091" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw720dp/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw840dp-land/activity_main.xml" value="0.21796875" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw840dp/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw960dp-land/activity_main.xml" value="0.2507462686567164" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw960dp/activity_main.xml" value="0.275" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw840dp/activity_main.xml" value="0.1326388888888889" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw960dp-land/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw960dp-v26/activity_main.xml" value="0.275" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-sw960dp/activity_main.xml" value="0.12222222222222222" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-w2200dp-land-xxhdpi/activity_main.xml" value="0.3640625" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-w2636dp-land-xxhdpi/activity_main.xml" value="0.4276041666666667" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-w733dp-land-xxhdpi/activity_main.xml" value="0.64140625" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xhdpi/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xxhdpi-v26/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xxhdpi/activity_main.xml" value="0.3640625" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout-xxxhdpi/activity_main.xml" value="0.275" />
-        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout/activity_main.xml" value="0.3640625" />
+        <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/layout/activity_main.xml" value="0.3028141101862862" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Balantaim/AndroidStudioProjects/SimpleCalculatorv2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22135416666666666" />
       </map>

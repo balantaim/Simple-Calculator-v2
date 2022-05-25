@@ -224,19 +224,19 @@ public class MainActivity extends AppCompatActivity {
             if(result%1==0){
                 resultLong = (long) result;
                 if(negativeNum && (operator.contains("-") || operator.contains("+"))){
-                    txtPanel.setText(number2  + operator + "(" +number1+ ")=");
+                    txtPanel.setText(number2  + operator + "(" +number1+ ")");
                 } else {
-                    txtPanel.setText(number2 + operator + number1+ "=");
+                    txtPanel.setText(number2 + operator + number1+ "");
                 }
-                txtLegacy.setText(resultLong + "");
+                txtLegacy.setText("=" + resultLong);
                 number1=resultLong+"";
             } else {
                 if(negativeNum && (operator.contains("-") || operator.contains("+"))){
-                    txtPanel.setText(number2 + operator + "(" + number1+ ")=");
+                    txtPanel.setText(number2 + operator + "(" + number1+ ")");
                 } else {
-                    txtPanel.setText(number2 + operator + number1+"=");
+                    txtPanel.setText(number2 + operator + number1+ "");
                 }
-                txtLegacy.setText(result + "");
+                txtLegacy.setText("=" + result);
                 number1=result+"";
                 }
             }
@@ -252,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
             if(!number1.contains(getString(R.string.infinity))){
                 txtPanel.setText(number1 + " exp(2)");
             }
-            txtLegacy.setText(sum + "");
+            txtLegacy.setText("=" + sum);
             newStr = true;
             number1 = sum + "";
             number2 = "";
@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
             }
             double sum = Math.sqrt(parseDouble(number1));
             txtPanel.setText("√" + number1);
-            txtLegacy.setText(sum + "");
+            txtLegacy.setText("=" + sum);
             newStr = true;
             number1 = sum + "";
             number2 = "";
