@@ -4,7 +4,6 @@ import static java.lang.Double.parseDouble;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +11,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import com.google.android.material.color.DynamicColors;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView txtPanel, txtLegacy;
-    Button zeroBtn, one, two, three, four, five, six, seven, eight, nine, equal,
+    Button btnZero, one, two, three, four, five, six, seven, eight, nine, equal,
             comma, pi, sqrt, minus, plus, division, multiplication,
             percent, plus_minus, del, backspace;
     ImageButton x2, xy;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private void idDeclaration() {
         txtPanel = findViewById(R.id.txtPanel);
         txtLegacy = findViewById(R.id.txtLegacy);
-        zeroBtn = findViewById(R.id.zeroBtn);
+        btnZero = findViewById(R.id.zero);
         one = findViewById(R.id.one);
         two = findViewById(R.id.two);
         three = findViewById(R.id.three);
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         number1 = txtPanel.getText().toString();
         numberCount();
         switch (view.getId()) {
-            case R.id.zeroBtn:
+            case R.id.zero:
                 if (maxNum){return;}
                 number1 += "0";
                 break;

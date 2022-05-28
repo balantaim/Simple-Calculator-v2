@@ -417,12 +417,13 @@
                 tools:layout_editor_absoluteX="8dp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/zeroBtn"
+                android:id="@+id/zero"
                 android:layout_width="30pt"
                 android:layout_height="40dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/simple_button"
+                android:contentDescription="@string/btn_zero"
                 android:fontFamily="@font/stencil"
                 android:onClick="addNumbersToString"
                 android:text="0"
