@@ -346,7 +346,6 @@ public class MainActivity extends AppCompatActivity {
         result = savedInstanceState.getDouble("key_result", 0);
         newStr = savedInstanceState.getBoolean("key_new_str", true);
         maxNum = savedInstanceState.getBoolean("key_max_num", false);
-
         super.onRestoreInstanceState(savedInstanceState);
     }
 }
