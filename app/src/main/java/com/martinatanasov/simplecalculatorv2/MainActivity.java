@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import com.google.android.material.color.DynamicColors;
+//import com.google.android.material.color.DynamicColors;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Apply dynamic colors if available
-        DynamicColors.applyToActivityIfAvailable(this);
+        //DynamicColors.applyToActivityIfAvailable(this);
+
         setContentView(R.layout.activity_main);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
