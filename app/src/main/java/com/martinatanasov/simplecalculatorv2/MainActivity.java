@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-//import com.google.android.material.color.DynamicColors;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             comma, pi, sqrt, minus, plus, division, multiplication,
             percent, plus_minus, del, backspace;
     ImageButton x2, xy;
-    String number1= "";
+    String number1 = "";
     String number2 = "";
     String operator = "";
     long resultLong = 0;
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //Apply dynamic colors if available
         //DynamicColors.applyToActivityIfAvailable(this);
 

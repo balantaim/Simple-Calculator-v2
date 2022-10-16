@@ -101,7 +101,7 @@
                 android:fontFamily="@font/stencil"
                 android:lines="1"
                 android:onClick="clearWord"
-                android:text="back"
+                android:text="bac"
                 android:textColor="@color/white"
                 android:textSize="28sp"
                 tools:ignore="HardcodedText,UsingOnClickInXml"
