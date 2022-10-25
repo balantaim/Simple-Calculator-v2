@@ -152,7 +152,7 @@
                 android:background="@drawable/third_button_big"
                 android:contentDescription="@string/xy"
                 android:onClick="operatorsEvent"
-                android:padding="38dp"
+                android:padding="40dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_xy_big"
                 tools:ignore="UsingOnClickInXml" />
@@ -166,7 +166,7 @@
                 android:background="@drawable/third_button_big"
                 android:contentDescription="@string/x2"
                 android:onClick="xPowered"
-                android:padding="38dp"
+                android:padding="40dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_x2_big"
                 tools:ignore="UsingOnClickInXml" />
