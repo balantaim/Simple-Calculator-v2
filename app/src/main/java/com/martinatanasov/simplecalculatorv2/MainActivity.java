@@ -209,13 +209,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cleanAll(View view){
+        if(!number1.equals("") || !number2.equals("")){
+            vibroClick();
+        }
         txtPanel.setText("0");
         txtLegacy.setText("");
         number1="";
         number2="";
         operator="";
         newStr=true;
-        vibroClick();
     }
 
     @SuppressLint("SetTextI18n")
