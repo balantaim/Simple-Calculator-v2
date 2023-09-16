@@ -13,11 +13,13 @@
 package com.martinatanasov.simplecalculatorv2;
 
 import static java.lang.Double.parseDouble;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -32,14 +34,11 @@ public class MainActivity extends AppCompatActivity {
             comma, pi, sqrt, minus, plus, division, multiplication,
             percent, plus_minus, del, backspace;
     ImageButton x2, xy;
-    String number1 = "";
-    String number2 = "";
-    String operator = "";
-    long resultLong = 0;
-    double result = 0;
-    final double piNumber = 3.141592653589793;
-    boolean newStr = true;
-    boolean maxNum = false;
+    private Vibrator vibrator;
+    private String number1 = "", number2 = "", operator = "";
+    private long resultLong = 0;
+    private double result = 0;
+    private boolean newStr = true, maxNum = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +82,18 @@ public class MainActivity extends AppCompatActivity {
         pi = findViewById(R.id.pi);
         sqrt = findViewById(R.id.sqrt);
         backspace = findViewById(R.id.backspace);
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+    }
+
+    public void vibroClick(){
+        //Check if the device has vibrator hardware
+        if(vibrator.hasVibrator()) {
+            //Check if the Android version is 8 or newer
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(20, VibrationEffect.DEFAULT_AMPLITUDE));
+                //Log.d("Vibrate", "vibroClick: yes, " + "operator: " + operator + " num1: " + number1);
+            }
+        }
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -135,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 number1 += "9";
                 break;
             case R.id.pi:
-                number1 = piNumber + "";
+                number1 = "3.141592653589793";
                 break;
             case R.id.comma:
                 if(number1.contains(".")){
@@ -156,9 +167,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         txtPanel.setText(number1);
+        vibroClick();
     }
 
-    @SuppressLint("NonConstantResourceId")
+    @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
     public void operatorsEvent(View view) {
         if(parseNumber(number1) && parseNumber(number2)){
             if(operator.equals("%") || operator.equals("(exponent)")){return;
@@ -193,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         txtLegacy.setText(number1+" "+operator);
+        vibroClick();
     }
 
     public void cleanAll(View view){
@@ -202,8 +215,10 @@ public class MainActivity extends AppCompatActivity {
         number2="";
         operator="";
         newStr=true;
+        vibroClick();
     }
 
+    @SuppressLint("SetTextI18n")
     public void equalEvent(View view) {
         if(!number2.equals("") && parseNumber(number2) && parseNumber(number1)){
             switch (operator) {
@@ -254,14 +269,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 txtLegacy.setText("=" + result);
                 number1=result+"";
-                }
             }
-            newStr=true;
-            number2="";
-            resultLong=0;
-            result=0;
+        }
+        newStr=true;
+        number2="";
+        resultLong=0;
+        result=0;
+        vibroClick();
     }
 
+    @SuppressLint("SetTextI18n")
     public void xPowered(View view){
         if (!number1.equals("") && parseNumber(number1)) {
             double sum = parseDouble(number1) * parseDouble(number1);
@@ -272,9 +289,11 @@ public class MainActivity extends AppCompatActivity {
             newStr = true;
             number1 = sum + "";
             number2 = "";
+            vibroClick();
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void clearWord (View view) {
         if(number1.contains(getString(R.string.infinity))){
             cleanAll(view);
@@ -286,17 +305,20 @@ public class MainActivity extends AppCompatActivity {
             if (!number1.equals("") && 0<number1.length()){
                 number1 = number1.substring(0, number1.length() - 1);
                 txtPanel.setText(number1 + "");
+                vibroClick();
             }
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void sqrt(View view){
         if (!number1.equals("") && parseNumber(number1)) {
-            if (parseDouble(number1)<0){
+            if (parseDouble(number1) < 0){
                 txtLegacy.setText(R.string.invalid_number); //"Invalid number"
                 newStr = true;
                 number1 = "";
                 number2 = "";
+                vibroClick();
                 return;
             }
             double sum = Math.sqrt(parseDouble(number1));
@@ -305,25 +327,26 @@ public class MainActivity extends AppCompatActivity {
             newStr = true;
             number1 = sum + "";
             number2 = "";
+            vibroClick();
         }
     }
 
-    public boolean numberCount(){
-        maxNum= false;
+    private boolean numberCount(){
+        maxNum = false;
         if (number1.length()<15){return maxNum;}
-        int count =0;
+        int count = 0;
         char[] c = new char[number1.length()];
         for (int i = 0; i < number1.length(); i++) {
             c[i] = number1.charAt(i);
         }
-        for (int i =0; i<c.length; i++){
+        for (int i = 0; i<c.length; i++){
             if (Character.isDigit(c[i])){count++;}
         }
-        if(count>=16){maxNum=true;}
+        if(count >= 16){maxNum = true;}
         return maxNum;
     }
 
-    public static boolean parseNumber(String s){
+    private static boolean parseNumber(String s){
         try {
             parseDouble(s);
             return true;
