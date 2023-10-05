@@ -64,26 +64,26 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         idDeclaration();
 
-        txtLegacy.setOnClickListener(view -> showOptions(view) );
+        txtLegacy.setOnClickListener(view -> showPopupOptions(view) );
     }
-    public void showOptions(View view){
-        PopupMenu option = new PopupMenu(this, view);
-        option.setOnMenuItemClickListener(this);
-        option.inflate(R.menu.options);
-        option.show();
+    public void showPopupOptions(View view){
+        if(txtLegacy.getText().toString().length() > 1 && txtLegacy.getText().toString().contains("=")){
+            PopupMenu option = new PopupMenu(this, view);
+            option.setOnMenuItemClickListener(this);
+            option.inflate(R.menu.options);
+            option.show();
+        }
     }
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        if(txtLegacy.getText().toString().length() > 1){
-            if(item.getItemId() == R.id.copy_btn){
-                copyResult();
-                Toast.makeText(this, R.string.clipboard_copy, Toast.LENGTH_SHORT).show();
-                return true;
-            }else if(item.getItemId() == R.id.share_btn){
-                shareResult();
-                return true;
-            }
+        if(item.getItemId() == R.id.copy_btn){
+            copyResult();
+            Toast.makeText(this, R.string.clipboard_copy, Toast.LENGTH_SHORT).show();
+            return true;
+        }else if(item.getItemId() == R.id.share_btn){
+            shareResult();
+            return true;
         }
         return false;
     }
