@@ -16,18 +16,28 @@ import static java.lang.Double.parseDouble;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.lang.reflect.Field;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     TextView txtPanel, txtLegacy;
     Button btnZero, one, two, three, four, five, six, seven, eight, nine, equal,
@@ -53,6 +63,58 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         idDeclaration();
+
+        txtLegacy.setOnClickListener(view -> showOptions(view) );
+    }
+    public void showOptions(View view){
+        PopupMenu option = new PopupMenu(this, view);
+        option.setOnMenuItemClickListener(this);
+        option.inflate(R.menu.options);
+        option.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        if(txtLegacy.getText().toString().length() > 1){
+            if(item.getItemId() == R.id.copy_btn){
+                copyResult();
+                Toast.makeText(this, R.string.clipboard_copy, Toast.LENGTH_SHORT).show();
+                return true;
+            }else if(item.getItemId() == R.id.share_btn){
+                shareResult();
+                return true;
+            }
+        }
+        return false;
+    }
+    private void copyResult(){
+        // Gets a handle to the clipboard service.
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        String shareValue = txtLegacy.getText().toString().replace("=", "");
+        // Creates a new text clip to put on the clipboard.
+        ClipData clip = ClipData.newPlainText("Final result", shareValue);
+        // Set the clipboard's primary clip.
+        clipboard.setPrimaryClip(clip);
+    }
+    private void shareResult(){
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareValue = txtLegacy.getText().toString().replace("=", "");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Final result");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareValue);
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+    }
+    //Try to add popup icons
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        try {
+            Field field = menu.getClass().getDeclaredField("options");
+            field.setAccessible(true);
+            field.setBoolean(menu, true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return super.onPrepareOptionsMenu(menu);
     }
 
     private void idDeclaration() {

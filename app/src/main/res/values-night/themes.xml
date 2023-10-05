@@ -27,5 +27,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+        <!-- Popup menu background -->
+        <item name="android:itemBackground">@color/teal_850</item>
     </style>
 </resources>

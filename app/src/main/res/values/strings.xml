@@ -17,4 +17,7 @@
     <string name="btn_zero">zero</string>
     <string name="invalid_number">Invalid number</string>
     <string name="infinity">Infinity</string>
+    <string name="copy">Copy</string>
+    <string name="share">Share</string>
+    <string name="clipboard_copy">Copied to clipboard</string>
 </resources>
