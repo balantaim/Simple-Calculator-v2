@@ -6,4 +6,4 @@
 <p>Features: Beautiful design, Working interface, Display mode: portrait/landscape</p>
 <p>Resolution: MDPI, HDPI, XHDPI, XXHDPI, XXXHDPI, DayNight mode</p>
 
-![Simple calculator link](play.google.com/store/apps/details?id=com.martinatanasov.simplecalculatorv2)
+![Simple calculator link](https://play.google.com/store/apps/details?id=com.martinatanasov.simplecalculatorv2)
