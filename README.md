@@ -1,3 +1,10 @@
-# Simple-Calculator-v2
+# Simple Calculator v2
 # [MIT License](LICENSE)
-Version 2
+
+### Mobile aplication for Android OS writen in Java and avaible to download from Play store
+
+<p>Features: Beautiful design, Working interface, Display mode: portrait/landscape</p>
+<p>Resolution: MDPI, HDPI, XHDPI, XXHDPI, XXXHDPI, DayNight mode</p>
+
+<a href="https://play.google.com/store/apps/details?id=com.martinatanasov.simplecalculatorv2">Simple calculator link</a>
+
