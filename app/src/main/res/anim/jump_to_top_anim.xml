@@ -10,13 +10,19 @@
   ~ For a copy, see <https://opensource.org/licenses/MIT>.
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/copy_btn"
-        android:title="@string/copy"
-        android:icon="@drawable/ic_copy"
-        android:iconTintMode="add"/>
-    <item android:id="@+id/share_btn"
-        android:title="@string/share"
-        android:icon="@drawable/ic_share"
-        android:iconTintMode="add" />
-</menu>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:duration="100"
+        android:fromYDelta="-60%"
+        android:toYDelta="0"/>
+    <alpha
+        android:duration="70"
+        android:fromAlpha="0.1"
+        android:toAlpha="1.0"/>
+    <scale
+        android:duration="100"
+        android:fromXScale="0.8"
+        android:fromYScale="0.8"
+        android:toXScale="1.0"
+        android:toYScale="1.0"/>
+</set>

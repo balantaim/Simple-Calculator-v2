@@ -24,16 +24,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.lang.reflect.Field;
 
 
@@ -65,6 +67,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         idDeclaration();
 
         txtLegacy.setOnClickListener(view -> showPopupOptions(view) );
+    }
+
+    private void showAnimationEqual(){
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.jump_to_top_anim);
+        animation.reset();
+        txtLegacy.clearAnimation();
+        txtLegacy.startAnimation(animation);
     }
     public void showPopupOptions(View view){
         if(txtLegacy.getText().toString().length() > 1 && txtLegacy.getText().toString().contains("=")){
@@ -153,7 +162,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             //Check if the Android version is 8 or newer
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 vibrator.vibrate(VibrationEffect.createOneShot(20, VibrationEffect.DEFAULT_AMPLITUDE));
-                //Log.d("Vibrate", "vibroClick: yes, " + "operator: " + operator + " num1: " + number1);
             }
         }
     }
@@ -323,6 +331,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 } else {
                     txtPanel.setText(number2 + operator + number1+ "");
                 }
+//                if(!txtLegacy.getText().toString().replaceAll("^[x/+-=]", "").equals(String.valueOf(resultLong))){
+//                    showAnimationEqual();
+//                }
                 txtLegacy.setText("=" + resultLong);
                 number1=resultLong+"";
             } else {
@@ -331,6 +342,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 } else {
                     txtPanel.setText(number2 + operator + number1+ "");
                 }
+//                if(!txtLegacy.getText().toString().replaceAll("^[x/+-=]", "").equals(String.valueOf(result))){
+//                    showAnimationEqual();
+//                }
                 txtLegacy.setText("=" + result);
                 number1=result+"";
             }
@@ -339,6 +353,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         number2="";
         resultLong=0;
         result=0;
+        showAnimationEqual();
         vibroClick();
     }
 
@@ -353,6 +368,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             newStr = true;
             number1 = sum + "";
             number2 = "";
+            showAnimationEqual();
             vibroClick();
         }
     }
