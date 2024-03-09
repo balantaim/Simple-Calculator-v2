@@ -10,12 +10,12 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\Balantaim\.android\avd\Galaxy_Nexus_API_23.avd" />
+                  <value value="C:\Users\Balantaim\.android\avd\Pixel_2_API_30_new.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-01-24T18:21:20.678105300Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-03-09T12:15:31.135961Z" />
         </State>
       </entry>
     </value>

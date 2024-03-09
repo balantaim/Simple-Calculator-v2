@@ -36,6 +36,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
@@ -297,7 +298,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     result = parseDouble(number2) + parseDouble(number1);
                     break;
                 case "-":
-                    result = parseDouble(number2) - parseDouble(number1);
+                    //result = parseDouble(number2) - parseDouble(number1);
+                    //New solution for problem with formatting result
+                    BigDecimal resultBigDecimal = new BigDecimal(number2).subtract(new BigDecimal(number1));
+                    result = resultBigDecimal.doubleValue();
+                    //Log.d("minus", "equalEvent: res= " + result);
                     break;
                 case "x":
                     result = parseDouble(number2) * parseDouble(number1);
