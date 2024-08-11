@@ -1,7 +1,7 @@
 # Simple Calculator v2
 # [MIT License](LICENSE)
 
-### Mobile aplication for Android OS writen in Java and avaible to download from Play store
+### Mobile application for Android OS written in Java and available to download from Play store
 
 <p>Features: Beautiful design, Working interface, Display mode: portrait/landscape</p>
 <p>Resolution: MDPI, HDPI, XHDPI, XXHDPI, XXXHDPI, DayNight mode</p>
