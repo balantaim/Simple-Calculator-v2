@@ -13,14 +13,16 @@
 
 <table>
     <tr>
-        <td><img src="images/1.png" height=279 style="max-height: 466px; margin: 6px;" alt="Calculator 1"></td>
-        <td><img src="images/2.png" height=279 style="max-height: 466px; margin: 6px;" alt="Calculator 2"></td>
+        <td><img src="images/1.png" height=300 style="max-height: 466px; margin: 6px;" alt="Calculator 1"></td>
     </tr>
     <tr>
-        <td><img src="images/3.png" style="max-height: 466px; margin: 6px;" alt="Calculator 3"></td>
+        <td><img src="images/2.png" height=300 style="max-height: 466px; margin: 6px;" alt="Calculator 2"></td>
+    </tr>
+    <tr>
+        <td><img src="images/3.png" height=300 style="max-height: 466px; margin: 6px;" alt="Calculator 3"></td>
     </tr>    
     <tr>
-        <td><img src="images/4.png" style="max-height: 466px; margin: 6px;" alt="Calculator 4"></td>
+        <td><img src="images/4.png" height=300 style="max-height: 466px; margin: 6px;" alt="Calculator 4"></td>
     </tr>
 </table>
 
