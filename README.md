@@ -10,8 +10,9 @@
 
 ## Images
 
-![Calculator 1](images/1.png)
-![Calculator 2](images/2.png)
-![Calculator 3](images/3.png)
-![Calculator 4](images/4.png)
+<img src="images/images/1.png" style="max-height: 830px; margin: 6px;" alt="Calculator 1">
+<img src="images/images/2.png" style="max-height: 830px; margin: 6px;" alt="Calculator 2">
+<img src="images/images/3.png" style="max-height: 830px; margin: 6px;" alt="Calculator 3">
+<img src="images/images/4.png" style="max-height: 830px; margin: 6px;" alt="Calculator 4">
+
 
