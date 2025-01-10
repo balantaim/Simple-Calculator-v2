@@ -10,9 +10,18 @@
 
 ## Images
 
-<img src="images/1.png" style="max-height: 466px; margin: 6px;" alt="Calculator 1">
-<img src="images/2.png" style="max-height: 466px; margin: 6px;" alt="Calculator 2">
-<img src="images/3.png" style="max-height: 466px; margin: 6px;" alt="Calculator 3">
-<img src="images/4.png" style="max-height: 466px; margin: 6px;" alt="Calculator 4">
+
+<table>
+    <tr>
+        <td><img src="images/1.png" style="max-height: 466px; margin: 6px;" alt="Calculator 1"></td>
+        <td><img src="images/2.png" style="max-height: 466px; margin: 6px;" alt="Calculator 2"></td>
+    </tr>
+    <tr>
+        <td><img src="images/3.png" style="max-height: 466px; margin: 6px;" alt="Calculator 3"></td>
+    </tr>    
+    <tr>
+        <td><img src="images/4.png" style="max-height: 466px; margin: 6px;" alt="Calculator 4"></td>
+    </tr>
+</table>
 
 
