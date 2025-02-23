@@ -37,6 +37,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
@@ -293,22 +294,27 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @SuppressLint("SetTextI18n")
     public void equalEvent(View view) {
         if(!number2.equals("") && parseNumber(number2) && parseNumber(number1)){
+            BigDecimal resultBigDecimal;
             switch (operator) {
                 case "+":
-                    result = parseDouble(number2) + parseDouble(number1);
+                    resultBigDecimal = new BigDecimal(number2).add(new BigDecimal(number1));
+                    //result = parseDouble(number2) + parseDouble(number1);
+                    result = resultBigDecimal.doubleValue();
                     break;
                 case "-":
-                    //result = parseDouble(number2) - parseDouble(number1);
-                    //New solution for problem with formatting result
-                    BigDecimal resultBigDecimal = new BigDecimal(number2).subtract(new BigDecimal(number1));
+                    resultBigDecimal = new BigDecimal(number2).subtract(new BigDecimal(number1));
+                    //result = resultBigDecimal.doubleValue();
                     result = resultBigDecimal.doubleValue();
-                    //Log.d("minus", "equalEvent: res= " + result);
                     break;
                 case "x":
-                    result = parseDouble(number2) * parseDouble(number1);
+                    resultBigDecimal = new BigDecimal(number2).multiply(new BigDecimal(number1));
+                    //result = parseDouble(number2) * parseDouble(number1);
+                    result = resultBigDecimal.doubleValue();
                     break;
                 case "/":
-                    result = parseDouble(number2) / parseDouble(number1);
+                    resultBigDecimal = new BigDecimal(number2).divide(new BigDecimal(number1),10, RoundingMode.HALF_UP);
+                    //result = parseDouble(number2) / parseDouble(number1);
+                    result = resultBigDecimal.doubleValue();
                     break;
                 case "%":
                     try{
@@ -318,7 +324,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     }
                     break;
                 case "(exponent)":
-                    result=Math.pow(parseDouble(number2), parseDouble(number1));
+                    result = Math.pow(parseDouble(number2), parseDouble(number1));
                     break;
                 default:
                     break;
