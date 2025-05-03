@@ -298,22 +298,18 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             switch (operator) {
                 case "+":
                     resultBigDecimal = new BigDecimal(number2).add(new BigDecimal(number1));
-                    //result = parseDouble(number2) + parseDouble(number1);
                     result = resultBigDecimal.doubleValue();
                     break;
                 case "-":
                     resultBigDecimal = new BigDecimal(number2).subtract(new BigDecimal(number1));
-                    //result = resultBigDecimal.doubleValue();
                     result = resultBigDecimal.doubleValue();
                     break;
                 case "x":
                     resultBigDecimal = new BigDecimal(number2).multiply(new BigDecimal(number1));
-                    //result = parseDouble(number2) * parseDouble(number1);
                     result = resultBigDecimal.doubleValue();
                     break;
                 case "/":
                     resultBigDecimal = new BigDecimal(number2).divide(new BigDecimal(number1),10, RoundingMode.HALF_UP);
-                    //result = parseDouble(number2) / parseDouble(number1);
                     result = resultBigDecimal.doubleValue();
                     break;
                 case "%":
