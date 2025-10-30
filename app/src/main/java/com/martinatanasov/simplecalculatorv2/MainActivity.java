@@ -13,8 +13,7 @@
 package com.martinatanasov.simplecalculatorv2;
 
 import static java.lang.Double.parseDouble;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -24,10 +23,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.os.VibratorManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -35,10 +34,13 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
@@ -61,23 +63,27 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         //DynamicColors.applyToActivityIfAvailable(this);
 
         setContentView(R.layout.activity_main);
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
-
+        initScreenManager();
         idDeclaration();
-
-        txtLegacy.setOnClickListener(view -> showPopupOptions(view) );
+        //Init onClickListener for txtLegacy TextView
+        txtLegacy.setOnClickListener(view -> showPopupOptions(view));
     }
 
-    private void showAnimationEqual(){
+    private void initScreenManager() {
+        new ScreenManager(findViewById(R.id.root_layout),
+                getWindow(),
+                false);
+    }
+
+    private void showAnimationEqual() {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.jump_to_top_anim);
         animation.reset();
         txtLegacy.clearAnimation();
         txtLegacy.startAnimation(animation);
     }
-    public void showPopupOptions(View view){
-        if(txtLegacy.getText().toString().length() > 1 && txtLegacy.getText().toString().contains("=")){
+
+    public void showPopupOptions(View view) {
+        if (txtLegacy.getText().toString().length() > 1 && txtLegacy.getText().toString().contains("=")) {
             PopupMenu option = new PopupMenu(this, view);
             option.setOnMenuItemClickListener(this);
             option.inflate(R.menu.options);
@@ -87,17 +93,18 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        if(item.getItemId() == R.id.copy_btn){
+        if (item.getItemId() == R.id.copy_btn) {
             copyResult();
             Toast.makeText(this, R.string.clipboard_copy, Toast.LENGTH_SHORT).show();
             return true;
-        }else if(item.getItemId() == R.id.share_btn){
+        } else if (item.getItemId() == R.id.share_btn) {
             shareResult();
             return true;
         }
         return false;
     }
-    private void copyResult(){
+
+    private void copyResult() {
         // Gets a handle to the clipboard service.
         ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         String shareValue = txtLegacy.getText().toString().replace("=", "");
@@ -106,7 +113,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         // Set the clipboard's primary clip.
         clipboard.setPrimaryClip(clip);
     }
-    private void shareResult(){
+
+    private void shareResult() {
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
         String shareValue = txtLegacy.getText().toString().replace("=", "");
@@ -114,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareValue);
         startActivity(Intent.createChooser(sharingIntent, "Share via"));
     }
+
     //Try to add popup icons
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
@@ -154,12 +163,23 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         pi = findViewById(R.id.pi);
         sqrt = findViewById(R.id.sqrt);
         backspace = findViewById(R.id.backspace);
+        // Vibrator init
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            VibratorManager vibratorManager = (VibratorManager) getSystemService(VIBRATOR_MANAGER_SERVICE);
+            vibrator = vibratorManager.getDefaultVibrator();
+        } else {
+            initVibratorForOlderDevices();
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    private void initVibratorForOlderDevices() {
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
     }
 
-    public void vibroClick(){
+    public void useVibrationEffect() {
         //Check if the device has vibrator hardware
-        if(vibrator.hasVibrator()) {
+        if (vibrator.hasVibrator()) {
             //Check if the Android version is 8 or newer
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 vibrator.vibrate(VibrationEffect.createOneShot(20, VibrationEffect.DEFAULT_AMPLITUDE));
@@ -177,50 +197,70 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         numberCount();
         switch (view.getId()) {
             case R.id.zero:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "0";
                 break;
             case R.id.one:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "1";
                 break;
             case R.id.two:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "2";
                 break;
             case R.id.three:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "3";
                 break;
             case R.id.four:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "4";
                 break;
             case R.id.five:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "5";
                 break;
             case R.id.six:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "6";
                 break;
             case R.id.seven:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "7";
                 break;
             case R.id.eight:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "8";
                 break;
             case R.id.nine:
-                if (maxNum){return;}
+                if (maxNum) {
+                    return;
+                }
                 number1 += "9";
                 break;
             case R.id.pi:
                 number1 = "3.141592653589793";
                 break;
             case R.id.comma:
-                if(number1.contains(".")){
+                if (number1.contains(".")) {
                     return;
                 }
                 number1 += ".";
@@ -238,19 +278,22 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 break;
         }
         txtPanel.setText(number1);
-        vibroClick();
+        useVibrationEffect();
     }
 
     @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
     public void operatorsEvent(View view) {
-        if(parseNumber(number1) && parseNumber(number2)){
-            if(operator.equals("%") || operator.equals("(exponent)")){return;
+        if (parseNumber(number1) && parseNumber(number2)) {
+            if (operator.equals("%") || operator.equals("(exponent)")) {
+                return;
             } else {
                 equalEvent(view);
-                txtLegacy.setText(number1+" "+operator);
+                txtLegacy.setText(number1 + " " + operator);
             }
         }
-        if(number1.equals("")){return;}
+        if (number1.equals("")) {
+            return;
+        }
         number2 = number1;
         newStr = true;
         switch (view.getId()) {
@@ -275,25 +318,25 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             default:
                 break;
         }
-        txtLegacy.setText(number1+" "+operator);
-        vibroClick();
+        txtLegacy.setText(number1 + " " + operator);
+        useVibrationEffect();
     }
 
-    public void cleanAll(View view){
-        if(!number1.equals("") || !number2.equals("")){
-            vibroClick();
+    public void cleanAll(View view) {
+        if (!number1.equals("") || !number2.equals("")) {
+            useVibrationEffect();
         }
         txtPanel.setText("0");
         txtLegacy.setText("");
-        number1="";
-        number2="";
-        operator="";
-        newStr=true;
+        number1 = "";
+        number2 = "";
+        operator = "";
+        newStr = true;
     }
 
     @SuppressLint("SetTextI18n")
     public void equalEvent(View view) {
-        if(!number2.equals("") && parseNumber(number2) && parseNumber(number1)){
+        if (!number2.equals("") && parseNumber(number2) && parseNumber(number1)) {
             BigDecimal resultBigDecimal;
             switch (operator) {
                 case "+":
@@ -309,13 +352,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     result = resultBigDecimal.doubleValue();
                     break;
                 case "/":
-                    resultBigDecimal = new BigDecimal(number2).divide(new BigDecimal(number1),10, RoundingMode.HALF_UP);
+                    resultBigDecimal = new BigDecimal(number2).divide(new BigDecimal(number1), 10, RoundingMode.HALF_UP);
                     result = resultBigDecimal.doubleValue();
                     break;
                 case "%":
-                    try{
-                        result = (float)(Float.parseFloat(number1)*(parseDouble(number2)/100.0f));
-                    } catch (Exception e){
+                    try {
+                        result = (float) (Float.parseFloat(number1) * (parseDouble(number2) / 100.0f));
+                    } catch (Exception e) {
                         txtLegacy.setText(new StringBuilder().append("Error: ").append(e).toString());
                     }
                     break;
@@ -327,47 +370,47 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
 
             boolean negativeNum = false;
-            if(number1.contains("-")) {
+            if (number1.contains("-")) {
                 negativeNum = true;
             }
-            if(result%1==0){
+            if (result % 1 == 0) {
                 resultLong = (long) result;
-                if(negativeNum && (operator.contains("-") || operator.contains("+"))){
-                    txtPanel.setText(number2  + operator + "(" +number1+ ")");
+                if (negativeNum && (operator.contains("-") || operator.contains("+"))) {
+                    txtPanel.setText(number2 + operator + "(" + number1 + ")");
                 } else {
-                    txtPanel.setText(number2 + operator + number1+ "");
+                    txtPanel.setText(number2 + operator + number1 + "");
                 }
 //                if(!txtLegacy.getText().toString().replaceAll("^[x/+-=]", "").equals(String.valueOf(resultLong))){
 //                    showAnimationEqual();
 //                }
                 txtLegacy.setText("=" + resultLong);
-                number1=resultLong+"";
+                number1 = resultLong + "";
             } else {
-                if(negativeNum && (operator.contains("-") || operator.contains("+"))){
-                    txtPanel.setText(number2 + operator + "(" + number1+ ")");
+                if (negativeNum && (operator.contains("-") || operator.contains("+"))) {
+                    txtPanel.setText(number2 + operator + "(" + number1 + ")");
                 } else {
-                    txtPanel.setText(number2 + operator + number1+ "");
+                    txtPanel.setText(number2 + operator + number1 + "");
                 }
 //                if(!txtLegacy.getText().toString().replaceAll("^[x/+-=]", "").equals(String.valueOf(result))){
 //                    showAnimationEqual();
 //                }
                 txtLegacy.setText("=" + result);
-                number1=result+"";
+                number1 = result + "";
             }
         }
-        newStr=true;
-        number2="";
-        resultLong=0;
-        result=0;
+        newStr = true;
+        number2 = "";
+        resultLong = 0;
+        result = 0;
         showAnimationEqual();
-        vibroClick();
+        useVibrationEffect();
     }
 
     @SuppressLint("SetTextI18n")
-    public void xPowered(View view){
+    public void xPowered(View view) {
         if (!number1.equals("") && parseNumber(number1)) {
             double sum = parseDouble(number1) * parseDouble(number1);
-            if(!number1.contains(getString(R.string.infinity))){
+            if (!number1.contains(getString(R.string.infinity))) {
                 txtPanel.setText(number1 + " exp(2)");
             }
             txtLegacy.setText("=" + sum);
@@ -375,36 +418,35 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             number1 = sum + "";
             number2 = "";
             showAnimationEqual();
-            vibroClick();
+            useVibrationEffect();
         }
     }
 
     @SuppressLint("SetTextI18n")
-    public void clearWord (View view) {
-        if(number1.contains(getString(R.string.infinity))){
+    public void clearWord(View view) {
+        if (number1.contains(getString(R.string.infinity))) {
             cleanAll(view);
         }
-        if (newStr){
+        if (newStr) {
             return;
-        }
-        else if(!number1.contains("E") || number1.contains("e")){
-            if (!number1.equals("") && 0<number1.length()){
+        } else if (!number1.contains("E") || number1.contains("e")) {
+            if (!number1.equals("") && 0 < number1.length()) {
                 number1 = number1.substring(0, number1.length() - 1);
                 txtPanel.setText(number1 + "");
-                vibroClick();
+                useVibrationEffect();
             }
         }
     }
 
     @SuppressLint("SetTextI18n")
-    public void sqrt(View view){
+    public void sqrt(View view) {
         if (!number1.equals("") && parseNumber(number1)) {
-            if (parseDouble(number1) < 0){
+            if (parseDouble(number1) < 0) {
                 txtLegacy.setText(R.string.invalid_number); //"Invalid number"
                 newStr = true;
                 number1 = "";
                 number2 = "";
-                vibroClick();
+                useVibrationEffect();
                 return;
             }
             double sum = Math.sqrt(parseDouble(number1));
@@ -413,30 +455,36 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             newStr = true;
             number1 = sum + "";
             number2 = "";
-            vibroClick();
+            useVibrationEffect();
         }
     }
 
-    private boolean numberCount(){
+    private boolean numberCount() {
         maxNum = false;
-        if (number1.length()<15){return maxNum;}
+        if (number1.length() < 15) {
+            return maxNum;
+        }
         int count = 0;
         char[] c = new char[number1.length()];
         for (int i = 0; i < number1.length(); i++) {
             c[i] = number1.charAt(i);
         }
-        for (int i = 0; i<c.length; i++){
-            if (Character.isDigit(c[i])){count++;}
+        for (int i = 0; i < c.length; i++) {
+            if (Character.isDigit(c[i])) {
+                count++;
+            }
         }
-        if(count >= 16){maxNum = true;}
+        if (count >= 16) {
+            maxNum = true;
+        }
         return maxNum;
     }
 
-    private static boolean parseNumber(String s){
+    private static boolean parseNumber(String s) {
         try {
             parseDouble(s);
             return true;
-        } catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }
@@ -471,4 +519,5 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         maxNum = savedInstanceState.getBoolean("key_max_num", false);
         super.onRestoreInstanceState(savedInstanceState);
     }
+
 }

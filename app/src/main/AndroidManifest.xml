@@ -28,7 +28,7 @@
             android:label="@string/app_name"
             android:resizeableActivity="false"
             android:exported="true"
-            tools:ignore="RedundantLabel"
+            tools:ignore="NonResizeableActivity,RedundantLabel"
             tools:targetApi="n">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

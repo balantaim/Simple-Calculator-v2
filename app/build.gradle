@@ -19,43 +19,52 @@ android {
             keyPassword keystoreProperties['keyPassword']
         }
     }
-    compileSdk 35
+    compileSdkVersion 36
 
     defaultConfig {
         applicationId "com.martinatanasov.simplecalculatorv2"
-        minSdk 21
-        targetSdk 34
-        versionCode 17
-        versionName "1.6.13"
+        minSdkVersion 21
+        targetSdkVersion 36
+        versionCode 19
+        versionName "1.6.15"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
+            debuggable false
             minifyEnabled true
-            shrinkResources true
+            shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            signingConfig = signingConfigs.release
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    //Generate archived APK
+    // Generate archived APK
     bundle {
         storeArchive {
             enable = false
         }
     }
-    namespace 'com.martinatanasov.simplecalculatorv2'
+    lint {
+        checkReleaseBuilds = true
+    }
+    // Check for deprecations
+    tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs << "-Xlint:deprecation"
+    }
+    namespace = 'com.martinatanasov.simplecalculatorv2'
+
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'com.google.android.material:material:1.13.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 }
