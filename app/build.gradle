@@ -25,8 +25,8 @@ android {
         applicationId "com.martinatanasov.simplecalculatorv2"
         minSdkVersion 21
         targetSdkVersion 36
-        versionCode 19
-        versionName "1.6.15"
+        versionCode 20
+        versionName "1.6.16"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
