@@ -19,12 +19,12 @@ android {
             keyPassword keystoreProperties['keyPassword']
         }
     }
-    compileSdkVersion 36
+    compileSdkVersion 37
 
     defaultConfig {
         applicationId "com.martinatanasov.simplecalculatorv2"
         minSdkVersion 21
-        targetSdkVersion 36
+        targetSdkVersion 37
         versionCode 20
         versionName "1.6.16"
 

@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.os.VibratorManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,8 +40,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
@@ -53,7 +52,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     private String number1 = "", number2 = "", operator = "";
     private long resultLong = 0;
     private double result = 0;
-    private boolean newStr = true, maxNum = false;
+    private boolean isNewStr = true, isMaxNum = false;
+    private FunctionUtils utils;
+    private static final int ALLOWED_MAX_CHARACTERS = 15;
+    private static final int EXCEEDED_MAX_CHARACTERS = 16;
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         initScreenManager();
         idDeclaration();
         //Init onClickListener for txtLegacy TextView
-        txtLegacy.setOnClickListener(view -> showPopupOptions(view));
+        txtLegacy.setOnClickListener(this::showPopupOptions);
     }
 
     private void initScreenManager() {
@@ -131,9 +134,189 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             field.setAccessible(true);
             field.setBoolean(menu, true);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG, "onPrepareOptionsMenu: ", e);
         }
         return super.onPrepareOptionsMenu(menu);
+    }
+
+    //    @SuppressWarnings("deprecation")
+    private void initVibratorForOlderDevices() {
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+    }
+
+    public void useVibrationEffect() {
+        //Check if the device has vibrator hardware
+        if (vibrator.hasVibrator()) {
+            //Check if the Android version is 8 or newer
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(20, VibrationEffect.DEFAULT_AMPLITUDE));
+            }
+        }
+    }
+
+    public void addNumbersToString(View view) {
+        if (isNewStr) {
+            txtPanel.setText("");
+            isNewStr = false;
+        }
+        number1 = txtPanel.getText().toString();
+        numberCount();
+        //Update number1's value
+        number1 = utils.applyNumberOperationById(view.getId(), number1, isMaxNum);
+        txtPanel.setText(number1);
+        useVibrationEffect();
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void operatorsEvent(View view) {
+        if (parseNumber(number1) && parseNumber(number2)) {
+            if (operator.equals("%") || operator.equals("(exponent)")) {
+                return;
+            } else {
+                equalEvent(view);
+                txtLegacy.setText(number1 + " " + operator);
+            }
+        }
+        if (number1.equals("")) {
+            return;
+        }
+        number2 = number1;
+        isNewStr = true;
+        //Update operator's value
+        operator = utils.getOperatorById(view.getId());
+        txtLegacy.setText(number1 + " " + operator);
+        useVibrationEffect();
+    }
+
+    public void cleanAll(View view) {
+        if (!number1.equals("") || !number2.equals("")) {
+            useVibrationEffect();
+        }
+        txtPanel.setText("0");
+        txtLegacy.setText("");
+        number1 = "";
+        number2 = "";
+        operator = "";
+        isNewStr = true;
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void equalEvent(View view) {
+        if (!number2.equals("") && parseNumber(number2) && parseNumber(number1)) {
+            //Calculate result based on equal button pressed
+            result = utils.getResultFromEqualKey(number1, number2, operator);
+
+            boolean negativeNum = false;
+            if (number1.contains("-")) {
+                negativeNum = true;
+            }
+            if (result % 1 == 0) {
+                resultLong = (long) result;
+                if (negativeNum && (operator.contains("-") || operator.contains("+"))) {
+                    txtPanel.setText(number2 + operator + "(" + number1 + ")");
+                } else {
+                    txtPanel.setText(number2 + operator + number1 + "");
+                }
+                txtLegacy.setText("=" + resultLong);
+                number1 = resultLong + "";
+            } else {
+                if (negativeNum && (operator.contains("-") || operator.contains("+"))) {
+                    txtPanel.setText(number2 + operator + "(" + number1 + ")");
+                } else {
+                    txtPanel.setText(number2 + operator + number1 + "");
+                }
+                txtLegacy.setText("=" + result);
+                number1 = result + "";
+            }
+        }
+        isNewStr = true;
+        number2 = "";
+        resultLong = 0;
+        result = 0;
+        showAnimationEqual();
+        useVibrationEffect();
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void xPowered(View view) {
+        if (!number1.equals("") && parseNumber(number1)) {
+            double sum = parseDouble(number1) * parseDouble(number1);
+            if (!number1.contains(getString(R.string.infinity))) {
+                txtPanel.setText(number1 + " exp(2)");
+            }
+            txtLegacy.setText("=" + sum);
+            isNewStr = true;
+            number1 = sum + "";
+            number2 = "";
+            showAnimationEqual();
+            useVibrationEffect();
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void clearWord(View view) {
+        if (number1.contains(getString(R.string.infinity))) {
+            cleanAll(view);
+        }
+        if (isNewStr) {
+            return;
+        } else if (!number1.contains("E") || number1.contains("e")) {
+            if (!number1.equals("") && 0 < number1.length()) {
+                number1 = number1.substring(0, number1.length() - 1);
+                txtPanel.setText(number1 + "");
+                useVibrationEffect();
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void sqrt(View view) {
+        if (!number1.equals("") && parseNumber(number1)) {
+            if (parseDouble(number1) < 0) {
+                txtLegacy.setText(R.string.invalid_number); //"Invalid number"
+                isNewStr = true;
+                number1 = "";
+                number2 = "";
+                useVibrationEffect();
+                return;
+            }
+            double sum = Math.sqrt(parseDouble(number1));
+            txtPanel.setText("√" + number1);
+            txtLegacy.setText("=" + sum);
+            isNewStr = true;
+            number1 = sum + "";
+            number2 = "";
+            useVibrationEffect();
+        }
+    }
+
+    private void numberCount() {
+        isMaxNum = false;
+        if (number1.length() < ALLOWED_MAX_CHARACTERS) {
+            return;
+        }
+        int count = 0;
+        char[] c = new char[number1.length()];
+        for (int i = 0; i < number1.length(); i++) {
+            c[i] = number1.charAt(i);
+        }
+        for (int i = 0; i < c.length; i++) {
+            if (Character.isDigit(c[i])) {
+                count++;
+            }
+        }
+        if (count >= EXCEEDED_MAX_CHARACTERS) {
+            isMaxNum = true;
+        }
+    }
+
+    private static boolean parseNumber(String s) {
+        try {
+            parseDouble(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     private void idDeclaration() {
@@ -163,329 +346,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         pi = findViewById(R.id.pi);
         sqrt = findViewById(R.id.sqrt);
         backspace = findViewById(R.id.backspace);
+        // Init Utils
+        utils = new FunctionUtils();
         // Vibrator init
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             VibratorManager vibratorManager = (VibratorManager) getSystemService(VIBRATOR_MANAGER_SERVICE);
             vibrator = vibratorManager.getDefaultVibrator();
         } else {
             initVibratorForOlderDevices();
-        }
-    }
-
-    @SuppressWarnings("deprecation")
-    private void initVibratorForOlderDevices() {
-        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-    }
-
-    public void useVibrationEffect() {
-        //Check if the device has vibrator hardware
-        if (vibrator.hasVibrator()) {
-            //Check if the Android version is 8 or newer
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(VibrationEffect.createOneShot(20, VibrationEffect.DEFAULT_AMPLITUDE));
-            }
-        }
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    public void addNumbersToString(View view) {
-        if (newStr) {
-            txtPanel.setText("");
-            newStr = false;
-        }
-        number1 = txtPanel.getText().toString();
-        numberCount();
-        switch (view.getId()) {
-            case R.id.zero:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "0";
-                break;
-            case R.id.one:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "1";
-                break;
-            case R.id.two:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "2";
-                break;
-            case R.id.three:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "3";
-                break;
-            case R.id.four:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "4";
-                break;
-            case R.id.five:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "5";
-                break;
-            case R.id.six:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "6";
-                break;
-            case R.id.seven:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "7";
-                break;
-            case R.id.eight:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "8";
-                break;
-            case R.id.nine:
-                if (maxNum) {
-                    return;
-                }
-                number1 += "9";
-                break;
-            case R.id.pi:
-                number1 = "3.141592653589793";
-                break;
-            case R.id.comma:
-                if (number1.contains(".")) {
-                    return;
-                }
-                number1 += ".";
-                break;
-            case R.id.plus_minus:
-                if (!number1.equals("") && !number1.equals("0")) {
-                    if (number1.startsWith("-")) {
-                        number1 = number1.substring(1);
-                    } else {
-                        number1 = "-" + number1;
-                    }
-                }
-                break;
-            default:
-                break;
-        }
-        txtPanel.setText(number1);
-        useVibrationEffect();
-    }
-
-    @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
-    public void operatorsEvent(View view) {
-        if (parseNumber(number1) && parseNumber(number2)) {
-            if (operator.equals("%") || operator.equals("(exponent)")) {
-                return;
-            } else {
-                equalEvent(view);
-                txtLegacy.setText(number1 + " " + operator);
-            }
-        }
-        if (number1.equals("")) {
-            return;
-        }
-        number2 = number1;
-        newStr = true;
-        switch (view.getId()) {
-            case R.id.plus:
-                operator = "+";
-                break;
-            case R.id.minus:
-                operator = "-";
-                break;
-            case R.id.multiplication:
-                operator = "x";
-                break;
-            case R.id.division:
-                operator = "/";
-                break;
-            case R.id.percent:
-                operator = "%";
-                break;
-            case R.id.xy:
-                operator = "(exponent)";
-                break;
-            default:
-                break;
-        }
-        txtLegacy.setText(number1 + " " + operator);
-        useVibrationEffect();
-    }
-
-    public void cleanAll(View view) {
-        if (!number1.equals("") || !number2.equals("")) {
-            useVibrationEffect();
-        }
-        txtPanel.setText("0");
-        txtLegacy.setText("");
-        number1 = "";
-        number2 = "";
-        operator = "";
-        newStr = true;
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void equalEvent(View view) {
-        if (!number2.equals("") && parseNumber(number2) && parseNumber(number1)) {
-            BigDecimal resultBigDecimal;
-            switch (operator) {
-                case "+":
-                    resultBigDecimal = new BigDecimal(number2).add(new BigDecimal(number1));
-                    result = resultBigDecimal.doubleValue();
-                    break;
-                case "-":
-                    resultBigDecimal = new BigDecimal(number2).subtract(new BigDecimal(number1));
-                    result = resultBigDecimal.doubleValue();
-                    break;
-                case "x":
-                    resultBigDecimal = new BigDecimal(number2).multiply(new BigDecimal(number1));
-                    result = resultBigDecimal.doubleValue();
-                    break;
-                case "/":
-                    resultBigDecimal = new BigDecimal(number2).divide(new BigDecimal(number1), 10, RoundingMode.HALF_UP);
-                    result = resultBigDecimal.doubleValue();
-                    break;
-                case "%":
-                    try {
-                        result = (float) (Float.parseFloat(number1) * (parseDouble(number2) / 100.0f));
-                    } catch (Exception e) {
-                        txtLegacy.setText(new StringBuilder().append("Error: ").append(e).toString());
-                    }
-                    break;
-                case "(exponent)":
-                    result = Math.pow(parseDouble(number2), parseDouble(number1));
-                    break;
-                default:
-                    break;
-            }
-
-            boolean negativeNum = false;
-            if (number1.contains("-")) {
-                negativeNum = true;
-            }
-            if (result % 1 == 0) {
-                resultLong = (long) result;
-                if (negativeNum && (operator.contains("-") || operator.contains("+"))) {
-                    txtPanel.setText(number2 + operator + "(" + number1 + ")");
-                } else {
-                    txtPanel.setText(number2 + operator + number1 + "");
-                }
-//                if(!txtLegacy.getText().toString().replaceAll("^[x/+-=]", "").equals(String.valueOf(resultLong))){
-//                    showAnimationEqual();
-//                }
-                txtLegacy.setText("=" + resultLong);
-                number1 = resultLong + "";
-            } else {
-                if (negativeNum && (operator.contains("-") || operator.contains("+"))) {
-                    txtPanel.setText(number2 + operator + "(" + number1 + ")");
-                } else {
-                    txtPanel.setText(number2 + operator + number1 + "");
-                }
-//                if(!txtLegacy.getText().toString().replaceAll("^[x/+-=]", "").equals(String.valueOf(result))){
-//                    showAnimationEqual();
-//                }
-                txtLegacy.setText("=" + result);
-                number1 = result + "";
-            }
-        }
-        newStr = true;
-        number2 = "";
-        resultLong = 0;
-        result = 0;
-        showAnimationEqual();
-        useVibrationEffect();
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void xPowered(View view) {
-        if (!number1.equals("") && parseNumber(number1)) {
-            double sum = parseDouble(number1) * parseDouble(number1);
-            if (!number1.contains(getString(R.string.infinity))) {
-                txtPanel.setText(number1 + " exp(2)");
-            }
-            txtLegacy.setText("=" + sum);
-            newStr = true;
-            number1 = sum + "";
-            number2 = "";
-            showAnimationEqual();
-            useVibrationEffect();
-        }
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void clearWord(View view) {
-        if (number1.contains(getString(R.string.infinity))) {
-            cleanAll(view);
-        }
-        if (newStr) {
-            return;
-        } else if (!number1.contains("E") || number1.contains("e")) {
-            if (!number1.equals("") && 0 < number1.length()) {
-                number1 = number1.substring(0, number1.length() - 1);
-                txtPanel.setText(number1 + "");
-                useVibrationEffect();
-            }
-        }
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void sqrt(View view) {
-        if (!number1.equals("") && parseNumber(number1)) {
-            if (parseDouble(number1) < 0) {
-                txtLegacy.setText(R.string.invalid_number); //"Invalid number"
-                newStr = true;
-                number1 = "";
-                number2 = "";
-                useVibrationEffect();
-                return;
-            }
-            double sum = Math.sqrt(parseDouble(number1));
-            txtPanel.setText("√" + number1);
-            txtLegacy.setText("=" + sum);
-            newStr = true;
-            number1 = sum + "";
-            number2 = "";
-            useVibrationEffect();
-        }
-    }
-
-    private boolean numberCount() {
-        maxNum = false;
-        if (number1.length() < 15) {
-            return maxNum;
-        }
-        int count = 0;
-        char[] c = new char[number1.length()];
-        for (int i = 0; i < number1.length(); i++) {
-            c[i] = number1.charAt(i);
-        }
-        for (int i = 0; i < c.length; i++) {
-            if (Character.isDigit(c[i])) {
-                count++;
-            }
-        }
-        if (count >= 16) {
-            maxNum = true;
-        }
-        return maxNum;
-    }
-
-    private static boolean parseNumber(String s) {
-        try {
-            parseDouble(s);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
         }
     }
 
@@ -499,9 +367,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         outState.putString("key_operator", operator);
         outState.putLong("key_result_long", resultLong);
         outState.putDouble("key_result", result);
-        outState.putBoolean("key_new_str", newStr);
-        outState.putBoolean("key_max_num", maxNum);
-
+        outState.putBoolean("key_new_str", isNewStr);
+        outState.putBoolean("key_max_num", isMaxNum);
         super.onSaveInstanceState(outState);
     }
 
@@ -515,8 +382,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         operator = savedInstanceState.getString("key_operator", "");
         resultLong = savedInstanceState.getLong("key_result_long", 0);
         result = savedInstanceState.getDouble("key_result", 0);
-        newStr = savedInstanceState.getBoolean("key_new_str", true);
-        maxNum = savedInstanceState.getBoolean("key_max_num", false);
+        isNewStr = savedInstanceState.getBoolean("key_new_str", true);
+        isMaxNum = savedInstanceState.getBoolean("key_max_num", false);
         super.onRestoreInstanceState(savedInstanceState);
     }
 
