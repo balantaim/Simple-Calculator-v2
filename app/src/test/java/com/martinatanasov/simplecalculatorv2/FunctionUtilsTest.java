@@ -38,9 +38,21 @@ public class FunctionUtilsTest {
     }
 
     @Test
+    public void testDivisionDecimalNumber() {
+        double result = utils.getResultFromEqualKey("3", "10", "/");
+        assertEquals(3.3333333333, result, 0.0000000001);
+    }
+
+    @Test
     public void testPercentage() {
         double result = utils.getResultFromEqualKey("10", "200", "%");
         assertEquals(20.0, result, 0.0001);
+    }
+
+    @Test
+    public void testPercentageDecimalNumber() {
+        double result = utils.getResultFromEqualKey("50", "140.036", "%");
+        assertEquals(70.0180000000, result, 0.0000000001);
     }
 
     @Test
