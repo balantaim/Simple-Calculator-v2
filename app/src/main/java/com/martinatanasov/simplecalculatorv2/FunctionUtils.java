@@ -32,7 +32,8 @@ public class FunctionUtils {
                 return resultBigDecimal.doubleValue();
             }
             case "%" -> {
-                return (float) (Float.parseFloat(number1) * (parseDouble(number2) / 100.0f));
+                resultBigDecimal = new BigDecimal(number2).multiply(new BigDecimal(number1)).divide(new BigDecimal("100"), 10, RoundingMode.HALF_UP);
+                return resultBigDecimal.doubleValue();
             }
             case "(exponent)" -> {
                 return Math.pow(parseDouble(number2), parseDouble(number1));
@@ -130,7 +131,7 @@ public class FunctionUtils {
             number1 += ".";
             return number1;
         } else if (id == R.id.plus_minus) {
-            if (!number1.equals("") && !number1.equals("0")) {
+            if (!number1.isEmpty() && !number1.equals("0")) {
                 if (number1.startsWith("-")) {
                     number1 = number1.substring(1);
                     return number1;

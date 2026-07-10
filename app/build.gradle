@@ -19,14 +19,14 @@ android {
             keyPassword keystoreProperties['keyPassword']
         }
     }
-    compileSdkVersion 37
+    compileSdkVersion 36
 
     defaultConfig {
         applicationId "com.martinatanasov.simplecalculatorv2"
-        minSdkVersion 21
-        targetSdkVersion 37
-        versionCode 20
-        versionName "1.6.16"
+        minSdkVersion 23
+        targetSdkVersion 36
+        versionCode 21
+        versionName "1.7.19"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,7 +46,7 @@ android {
     // Generate archived APK
     bundle {
         storeArchive {
-            enable = false
+            enable = true
         }
     }
     lint {
@@ -62,7 +62,7 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'com.google.android.material:material:1.14.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.3.0'
